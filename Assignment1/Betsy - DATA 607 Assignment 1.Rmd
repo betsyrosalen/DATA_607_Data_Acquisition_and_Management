@@ -1,0 +1,133 @@
+---
+title: "CUNY SPS DATA 607 Assignment 1"
+author: "Betsy Rosalen"
+date: "February 4, 2018"
+output:
+  html_document:
+    theme: cerulean
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment Instructions
+
+**Mushrooms Dataset**. A famous—if slightly moldy—dataset about mushrooms can be found in the UCI repository here: <https://archive.ics.uci.edu/ml/datasets/Mushroom>.
+
+Your task is to study the dataset and the associated description of the data (i.e. “data dictionary”). You may need to look around a bit, but it’s there! You should take the data, and create a data frame with a subset of the columns in the dataset. You should include the column that indicates edible or poisonous and three or four other columns. You should also add meaningful column names and replace the abbreviations used in the data—for example, in the appropriate column, “e” might become “edible.” Your deliverable is the R code to perform these transformation tasks.
+
+Please place your solution into a single R Markdown (.Rmd) file and publish your solution out to rpubs.com. You should post the .Rmd file in your GitHub repository, and provide the appropriate URLs to your GitHub repository and your rpubs.com file in your assignment link. You should also have the original data file accessible through your code—for example, stored in a GitHub repository and referenced in your code.
+
+## Load the Data into R
+
+```{R}
+library(RCurl) 
+x <- getURL("https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Assignment1/Mushrooms/agaricus-lepiota.csv") 
+mushrooms <-data.frame(read.csv(text=x, header=FALSE))
+dim(mushrooms)
+head(mushrooms, 3)
+```
+
+## Create Header Row
+
+```{r}
+mushrooms_dictionary <- read.table("https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Assignment1/Mushrooms/Data_Dictionary.txt",row.names = 1, sep=":", header=FALSE, quote="")
+row.names(mushrooms_dictionary)
+```
+
+```{r}
+names(mushrooms) <- row.names(mushrooms_dictionary)
+head(mushrooms, 3)
+```
+
+## Subset the Data for Class, Gill Characteristics, and Spore Color
+
+```{r}
+levels(mushrooms$classes)
+gills_spores <- mushrooms[c(1,7:10,21)]
+dim(gills_spores)
+```
+
+## Rename Data Levels in Subsetted Dataframe
+
+##### I commented out the code that returns the values in the dictionary because I spent hours on this section and can't figure out how to print/return just the value that is in the location without also printing the list of all 21 factor levels each time or how to use that directly to rename the factor levels in the gills_spores dataframe. 
+
+```{r}
+v1 <- mushrooms_dictionary$V2[1]
+v7 <- mushrooms_dictionary$V2[7]
+v8 <- mushrooms_dictionary$V2[8]
+v9 <- mushrooms_dictionary$V2[9]
+v10 <- mushrooms_dictionary$V2[10]
+v21 <- mushrooms_dictionary$V2[21]
+#v1
+#v7
+#v8
+#v9
+#v10
+#v21
+
+levels(gills_spores$classes) <- list("edible"="e","poisonous"="p")
+levels(gills_spores$`gill-attachment`) <- list("attached"="a","descending"="d","free"="f","notched"="n")
+levels(gills_spores$`gill-spacing`) <- list("close"="c","crowded"="w","distant"="d")
+levels(gills_spores$`gill-size`) <- list("broad"="b","narrow"="n")
+levels(gills_spores$`gill-color`) <- list("black"="k","brown"="n","buff"="b","chocolate"="h","gray"="g","green"="r","orange"="o","pink"="p","purple"="u","red"="e","white"="w","yellow"="y")
+levels(gills_spores$`spore-print-color`) <- list("black"="k","brown"="n","buff"="b","chocolate"="h","green"="r","orange"="o","purple"="u","white"="w","yellow"="y")
+head(gills_spores)
+```
+
+
+## Further Subset the Data by Class
+
+```{r}
+edible <- subset(gills_spores, classes == 'edible')
+poisonous <- subset(gills_spores, classes == 'poisonous')
+dim(edible)
+dim(poisonous)
+```
+
+```{r}
+summary(edible)
+summary(poisonous)
+```
+
+## Plot Some Data!
+
+### Spore Print Color of Edible Mushrooms
+
+```{r}
+plot(edible$`spore-print-color`, las=3)
+```
+
+### Spore Print Color of Poisonous Mushrooms
+
+```{r}
+plot(poisonous$`spore-print-color`, las=3)
+```
+
+### Gill Color of Edible Mushrooms
+
+```{r}
+plot(edible$`gill-color`, las=3)
+```
+
+### Gill Color of Poisonous Mushrooms
+
+```{r}
+plot(poisonous$`gill-color`, las=3)
+```
+
+##### There's probably a better plot for this, but it was the best I could do for now...
+
+I am trying to show the correlation between the combination of gill color and spore print color and whether a mushroom is edible or not.
+
+```{r}
+library(ggplot2)
+ggplot(data = gills_spores) + 
+  geom_jitter(mapping = aes(x = `gill-color`, y = `spore-print-color`, color = classes))
+```
+
+
+
+
