@@ -1178,6 +1178,7 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
+<li><a href="#assignment">Assignment</a></li>
 <li><a href="#problem-3">Problem 3</a><ul>
 <li><a href="#part-a">Part (a)</a></li>
 <li><a href="#part-b">Part (b)</a></li>
@@ -1194,9 +1195,13 @@ $(document).ready(function () {
 </ul>
 </div>
 
+<section id="assignment" class="level2">
+<h2>Assignment</h2>
+<p>Complete problems 3 and 4 from chapter 8 of from <strong>Automated Data Collection with R</strong> by Simon Munzert, Christian Rubba, Peter Meißner, and Dominic Nyhuis. Problem 9 is extra credit.</p>
+</section>
 <section id="problem-3" class="level2">
 <h2>Problem 3</h2>
-<p>Copy the introductory example. The vector <code>names</code> stores the extracted names.</p>
+<p>Copy the introductory example. The vector <code>name</code> stores the extracted names.</p>
 <pre class="r"><code>name</code></pre>
 <pre><code>## [1] &quot;Moe Szyslak&quot;          &quot;Burns, C. Montgomery&quot; &quot;Rev. Timothy Lovejoy&quot;
 ## [4] &quot;Ned Flanders&quot;         &quot;Simpson, Homer&quot;       &quot;Dr. Julius Hibbert&quot;</code></pre>
@@ -1245,7 +1250,7 @@ first_last</code></pre>
 </section>
 <section id="logical-vector" class="level5">
 <h5>Logical vector</h5>
-<pre class="r"><code># This works to on the rearranged list
+<pre class="r"><code># This works on the rearranged list
 str_detect(first_last, &quot;\\b\\w{1}\\. |(\\w+\\s){2}\\w+&quot;)</code></pre>
 <pre><code>## [1]  TRUE  TRUE  TRUE  TRUE FALSE FALSE</code></pre>
 </section>
@@ -1254,54 +1259,59 @@ str_detect(first_last, &quot;\\b\\w{1}\\. |(\\w+\\s){2}\\w+&quot;)</code></pre>
 <section id="problem-4" class="level2">
 <h2>Problem 4</h2>
 <p>Describe the types of strings that conform to the following regular expressions and construct and example that is matched by the regular expression.</p>
-<p>I use the <code>str_view_all</code> function to highlight only the matches in all examples below and show other examples of similar non-matching strings.</p>
+<p>I used the <code>str_view_all</code> function to shade only the matches in the examples below and to show examples of similar non-matching strings to highlight the differences between them.</p>
 <section id="part-a-1" class="level3">
 <h3>Part (a)</h3>
 <p><code>[0-9]+\\$</code> would match one or more digits (and digits only) follwed by a dollar sign.</p>
 <pre class="r"><code>x &lt;- c(&quot;$4343&quot;, &quot;23543$&quot;, &quot;23,543$&quot;)
 str_view_all(x, &quot;[0-9]+\\$&quot;)</code></pre>
-<div id="htmlwidget-507e286c368e934e38d1" style="width:960px;height:auto;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-507e286c368e934e38d1">{"x":{"html":"<ul>\n  <li>$4343<\/li>\n  <li><span class='match'>23543$<\/span><\/li>\n  <li>23,<span class='match'>543$<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-562fc83aa3c6d2ad33c7" style="width:960px;height:auto;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-562fc83aa3c6d2ad33c7">{"x":{"html":"<ul>\n  <li>$4343<\/li>\n  <li><span class='match'>23543$<\/span><\/li>\n  <li>23,<span class='match'>543$<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </section>
 <section id="part-b-1" class="level3">
 <h3>Part (b)</h3>
 <p><code>\\b[a-z]{1,4}\\b</code> would match 1 to 4 letter words in all lowercase letters.</p>
 <pre class="r"><code>x &lt;- c(&quot;Betsy&quot;, &quot;a&quot;, &quot;bets&quot;, &quot;bananas&quot;)
 str_view_all(x, &quot;\\b[a-z]{1,4}\\b&quot;)</code></pre>
-<div id="htmlwidget-179e689b900dd2a76db8" style="width:960px;height:auto;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-179e689b900dd2a76db8">{"x":{"html":"<ul>\n  <li>Betsy<\/li>\n  <li><span class='match'>a<\/span><\/li>\n  <li><span class='match'>bets<\/span><\/li>\n  <li>bananas<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-77e96ee2da0c9e271f1b" style="width:960px;height:auto;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-77e96ee2da0c9e271f1b">{"x":{"html":"<ul>\n  <li>Betsy<\/li>\n  <li><span class='match'>a<\/span><\/li>\n  <li><span class='match'>bets<\/span><\/li>\n  <li>bananas<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </section>
 <section id="part-c-1" class="level3">
 <h3>Part (c)</h3>
 <p><code>.*?\\.txt$</code> would match zero or more characters of any type followed by ‘.txt’ at the end of the string.</p>
 <pre class="r"><code>x &lt;- c(&quot;testfile.txt&quot;, &quot;testfile.csv&quot;, &quot;.txt&quot;, &quot;file.txttt&quot;)
 str_view_all(x, &quot;.*?\\.txt$&quot;)</code></pre>
-<div id="htmlwidget-868ff703de5efbc5147a" style="width:960px;height:auto;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-868ff703de5efbc5147a">{"x":{"html":"<ul>\n  <li><span class='match'>testfile.txt<\/span><\/li>\n  <li>testfile.csv<\/li>\n  <li><span class='match'>.txt<\/span><\/li>\n  <li>file.txttt<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-65fda788060b66c03c1a" style="width:960px;height:auto;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-65fda788060b66c03c1a">{"x":{"html":"<ul>\n  <li><span class='match'>testfile.txt<\/span><\/li>\n  <li>testfile.csv<\/li>\n  <li><span class='match'>.txt<\/span><\/li>\n  <li>file.txttt<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </section>
 <section id="part-d" class="level3">
 <h3>Part (d)</h3>
 <p><code>\\d{2}/\\d{2}/\\d{4}</code> would match a year in MM/DD/YYYY or DD/MM/YYYY format.</p>
 <pre class="r"><code>x &lt;- c(&quot;04/19/1972&quot;, &quot;25/07/1993&quot;, &quot;4/19/1972&quot;)
 str_view_all(x, &quot;\\d{2}/\\d{2}/\\d{4}&quot;)</code></pre>
-<div id="htmlwidget-93fdaa96aaca20b1da24" style="width:960px;height:auto;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-93fdaa96aaca20b1da24">{"x":{"html":"<ul>\n  <li><span class='match'>04/19/1972<\/span><\/li>\n  <li><span class='match'>25/07/1993<\/span><\/li>\n  <li>4/19/1972<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-847218b333a61dfc12da" style="width:960px;height:auto;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-847218b333a61dfc12da">{"x":{"html":"<ul>\n  <li><span class='match'>04/19/1972<\/span><\/li>\n  <li><span class='match'>25/07/1993<\/span><\/li>\n  <li>4/19/1972<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </section>
 <section id="part-e" class="level3">
 <h3>Part (e)</h3>
 <p><code>&lt;(.+?)&gt;.+?&lt;/\\1&gt;</code> would matching opening and closing html tags with any text in between. The ? ensures that it will match everything from the opening tag to the first occurance of the matching closing tag. It will not match tags that have additional parameters in the opening tag like links.</p>
 <pre class="r"><code>x &lt;- c(&quot;&lt;strong&gt;Hello World!&lt;/strong&gt;&quot;, 
        '&lt;a href=&quot;https://www.google.com&quot;&gt;Google&lt;/a&gt;', 
-       &quot;&lt;strong&gt;Hello&lt;/strong&gt; &lt;em&gt;World!&lt;/em&gt;&quot;, 
+       &quot;&lt;strong&gt;Hello&lt;/strong&gt; &lt;em&gt;World&lt;/em&gt;!&quot;, 
        &quot;&lt;em&gt;overlapping&lt;strong&gt; tags&lt;/em&gt;? Nested tag gets ignored.&lt;/strong&gt;&quot;)
 # Can't figure out how to get it to show the HTML tags in the output.  Sorry!
 str_view_all(x, &quot;&lt;(.+?)&gt;.+?&lt;/\\1&gt;&quot;)</code></pre>
-<div id="htmlwidget-b3e3e63cac935411afae" style="width:960px;height:auto;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b3e3e63cac935411afae">{"x":{"html":"<ul>\n  <li><span class='match'><strong>Hello World!<\/strong><\/span><\/li>\n  <li><a href=\"https://www.google.com\">Google<\/a><\/li>\n  <li><span class='match'><strong>Hello<\/strong><\/span> <span class='match'><em>World!<\/em><\/span><\/li>\n  <li><span class='match'><em>overlapping<strong> tags<\/em><\/span>? Nested tag gets ignored.<\/strong><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0a56e154ab4ff9479fd7" style="width:960px;height:auto;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0a56e154ab4ff9479fd7">{"x":{"html":"<ul>\n  <li><span class='match'><strong>Hello World!<\/strong><\/span><\/li>\n  <li><a href=\"https://www.google.com\">Google<\/a><\/li>\n  <li><span class='match'><strong>Hello<\/strong><\/span> <span class='match'><em>World<\/em><\/span>!<\/li>\n  <li><span class='match'><em>overlapping<strong> tags<\/em><\/span>? Nested tag gets ignored.<\/strong><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </section>
 </section>
 <section id="problem-9" class="level2">
 <h2>Problem 9</h2>
+<p>The following code hides a secret message. Crack it with R and regular expressions. <em>Hint: Some of the characters are more revealing than others!</em></p>
+<pre class="r"><code>x &lt;- &quot;clcopCow1zmstc0d87wnkig7OvdicpNuggvhryn92Gjuwczi8hqrfpRxs5Aj5dwpn0TanwoUwisdij7Lj8kpf03AT5Idr3coc0bt7yczjatOaootj55t3Nj3ne6c4Sfek.r1w1YwwojigOd6vrfUrbz2.2bkAnbhzgv4R9i05zEcrop.wAgnb.SqoU65fPa1otfb7wEm24k6t3sR9zqe5fy89n6Nd5t9kc4fE905gmc4Rgxo5nhDk!gr&quot;
+message &lt;- unlist(str_extract_all(x, &quot;[[:upper:][:punct:] ]&quot;))
+noquote(paste(message, collapse = &quot;&quot;))</code></pre>
+<pre><code>## [1] CONGRATULATIONS.YOU.ARE.A.SUPERNERD!</code></pre>
 </section>
 
 

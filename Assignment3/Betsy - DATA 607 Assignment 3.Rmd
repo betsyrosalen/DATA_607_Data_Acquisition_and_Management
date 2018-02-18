@@ -13,13 +13,17 @@ knitr::opts_chunk$set(echo = TRUE)
 library(stringr)
 ```
 
+## Assignment
+
+Complete problems 3 and 4 from chapter 8 of from **Automated Data Collection with R** by Simon Munzert, Christian Rubba, Peter Meißner, and Dominic Nyhuis.  Problem 9 is extra credit.
+
 ## Problem 3
 
 ```{r echo = FALSE}
 name <- c("Moe Szyslak", "Burns, C. Montgomery", "Rev. Timothy Lovejoy", "Ned Flanders", "Simpson, Homer", "Dr. Julius Hibbert")
 ```
 
-Copy the introductory example.  The vector `names` stores the extracted names.
+Copy the introductory example.  The vector `name` stores the extracted names.
 
 ```{r}
 name
@@ -73,7 +77,7 @@ first_last
 ##### Logical vector
 
 ```{r}
-# This works to on the rearranged list
+# This works on the rearranged list
 str_detect(first_last, "\\b\\w{1}\\. |(\\w+\\s){2}\\w+")
 ```
 
@@ -82,7 +86,7 @@ str_detect(first_last, "\\b\\w{1}\\. |(\\w+\\s){2}\\w+")
 
 Describe the types of strings that conform to the following regular expressions and construct and example that is matched by the regular expression.
 
-I use the `str_view_all` function to highlight only the matches in all examples below and show other examples of similar non-matching strings.
+I used the `str_view_all` function to shade only the matches in the examples below and to show examples of similar non-matching strings to highlight the differences between them.
 
 ### Part (a) 
 
@@ -127,7 +131,7 @@ str_view_all(x, "\\d{2}/\\d{2}/\\d{4}")
 ```{r results='markup'}
 x <- c("<strong>Hello World!</strong>", 
        '<a href="https://www.google.com">Google</a>', 
-       "<strong>Hello</strong> <em>World!</em>", 
+       "<strong>Hello</strong> <em>World</em>!", 
        "<em>overlapping<strong> tags</em>? Nested tag gets ignored.</strong>")
 # Can't figure out how to get it to show the HTML tags in the output.  Sorry!
 str_view_all(x, "<(.+?)>.+?</\\1>")
@@ -135,7 +139,11 @@ str_view_all(x, "<(.+?)>.+?</\\1>")
 
 ## Problem 9
 
-```{r}
+The following code hides a secret message.  Crack it with R and regular expressions.  *Hint: Some of the characters are more revealing than others!*
 
+```{r}
+x <- "clcopCow1zmstc0d87wnkig7OvdicpNuggvhryn92Gjuwczi8hqrfpRxs5Aj5dwpn0TanwoUwisdij7Lj8kpf03AT5Idr3coc0bt7yczjatOaootj55t3Nj3ne6c4Sfek.r1w1YwwojigOd6vrfUrbz2.2bkAnbhzgv4R9i05zEcrop.wAgnb.SqoU65fPa1otfb7wEm24k6t3sR9zqe5fy89n6Nd5t9kc4fE905gmc4Rgxo5nhDk!gr"
+message <- unlist(str_extract_all(x, "[[:upper:][:punct:] ]"))
+noquote(paste(message, collapse = ""))
 ```
 
