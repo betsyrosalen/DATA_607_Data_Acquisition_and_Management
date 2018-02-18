@@ -1,0 +1,141 @@
+---
+title: "CUNY SPS DATA 607 Assignment 3"
+author: "Betsy Rosalen"
+date: "February 17, 2018"
+output:
+  html_document:
+    theme: cerulean
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stringr)
+```
+
+## Problem 3
+
+```{r echo = FALSE}
+name <- c("Moe Szyslak", "Burns, C. Montgomery", "Rev. Timothy Lovejoy", "Ned Flanders", "Simpson, Homer", "Dr. Julius Hibbert")
+```
+
+Copy the introductory example.  The vector `names` stores the extracted names.
+
+```{r}
+name
+```
+
+### Part (a)
+
+Use the tools of this chapter to rearrange the vector so that all elements conform to the standard `first_name last_name`.
+
+```{r}
+str_replace(name, "([^[,]]+),\\s(.+)","\\2 \\1")
+```
+
+### Part (b)
+
+Construct a logical vector indicating whether a character has a title (i.e., Rev. and Dr.).
+
+```{r}
+first_last <- str_detect(name, "[[:alpha:]]{2,}\\.")
+first_last
+```
+
+### Part (c)
+
+Construct a logical vector indicating whether a character has a second name.
+
+##### First add some additional second names for testing purposes
+
+```{r}
+# Add some extra names for testing...
+name <- c("Moe Ed Szyslak", "Burns, C. Montgomery", "Rev. Timothy Andrew Lovejoy", "Ned T. Flanders", "Simpson, Homer", "Dr. Julius Hibbert")
+name
+```
+
+##### Logical vectors
+
+```{r}
+# This works on the original list but only for a first name or middle name that is an initial not if it's two full names
+str_detect(name, " \\w{1}\\.")
+# This works to capture both initials and full second names
+str_detect(name, " \\w{1}\\.|(\\w+\\s){2}\\w+")
+```
+
+##### Rearrange the names to first last order
+
+```{r}
+first_last <- str_replace(name, "([^[,]]+),\\s(.+)","\\2 \\1")
+first_last
+```
+
+##### Logical vector
+
+```{r}
+# This works to on the rearranged list
+str_detect(first_last, "\\b\\w{1}\\. |(\\w+\\s){2}\\w+")
+```
+
+
+## Problem 4
+
+Describe the types of strings that conform to the following regular expressions and construct and example that is matched by the regular expression.
+
+I use the `str_view_all` function to highlight only the matches in all examples below and show other examples of similar non-matching strings.
+
+### Part (a) 
+
+`[0-9]+\\$` would match one or more digits (and digits only) follwed by a dollar sign.
+
+```{r}
+x <- c("$4343", "23543$", "23,543$")
+str_view_all(x, "[0-9]+\\$")
+```
+
+### Part (b)
+
+`\\b[a-z]{1,4}\\b` would match 1 to 4 letter words in all lowercase letters.
+
+```{r}
+x <- c("Betsy", "a", "bets", "bananas")
+str_view_all(x, "\\b[a-z]{1,4}\\b")
+```
+
+### Part (c)
+
+`.*?\\.txt$` would match zero or more characters of any type followed by '.txt' at the end of the string.
+
+```{r}
+x <- c("testfile.txt", "testfile.csv", ".txt", "file.txttt")
+str_view_all(x, ".*?\\.txt$")
+```
+
+### Part (d)
+
+`\\d{2}/\\d{2}/\\d{4}` would match a year in MM/DD/YYYY or DD/MM/YYYY format.
+
+```{r}
+x <- c("04/19/1972", "25/07/1993", "4/19/1972")
+str_view_all(x, "\\d{2}/\\d{2}/\\d{4}")
+```
+
+### Part (e)
+
+`<(.+?)>.+?</\\1>` would matching opening and closing html tags with any text in between. The ? ensures that it will match everything from the opening tag to the first occurance of the matching closing tag. It will not match tags that have additional parameters in the opening tag like links.
+
+```{r results='markup'}
+x <- c("<strong>Hello World!</strong>", 
+       '<a href="https://www.google.com">Google</a>', 
+       "<strong>Hello</strong> <em>World!</em>", 
+       "<em>overlapping<strong> tags</em>? Nested tag gets ignored.</strong>")
+# Can't figure out how to get it to show the HTML tags in the output.  Sorry!
+str_view_all(x, "<(.+?)>.+?</\\1>")
+```
+
+## Problem 9
+
+```{r}
+
+```
+
