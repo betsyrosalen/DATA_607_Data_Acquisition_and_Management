@@ -1,0 +1,203 @@
+---
+title: "CUNY SPS DATA 607 Project 1"
+author: "Betsy Rosalen"
+date: "February 24, 2018"
+output:
+  html_document:
+    theme: cerulean
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment
+
+In this project, you’re given a text file with chess tournament results where the information has some structure. Your job is to create an R Markdown file that generates a .CSV file (that could for example be imported into a SQL database) with the following information for all of the players:
+
+Player’s Name, Player’s State, Total Number of Points, Player’s Pre-Rating, and Average Pre Chess Rating of Opponents
+
+For the first player, the information would be:
+
+Gary Hua, ON, 6.0, 1794, 1605
+
+1605 was calculated by using the pre-tournament opponents’ ratings of 1436, 1563, 1600, 1610, 1649, 1663, 1716, and dividing by the total number of games played.
+
+## Import the data.
+
+I used read.table so that I could separate data on the pipe "|" symbol.  I tried using the read_delim function from the readr package, but it gave me errors because of the separator rows. 
+
+```{r eval=FALSE, include=FALSE}
+library(readr)
+theUrl <- "https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Project1/tournamentinfo.txt"
+rawChessData <- read_delim(file = theUrl, skip = 1, delim = "|")
+str(rawChessData)
+```
+
+```{r}
+theUrl <- "https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Project1/tournamentinfo.txt"
+rawChessData <- read.table(file = theUrl, header = FALSE, skip = 1, sep = "|", fill = TRUE, stringsAsFactors = FALSE)
+str(rawChessData)
+```
+
+## Combine rows of data that belong to the same observation
+
+The original file has two rows for each player plus a separator row.  I created two data frames, one for each row of data and then combined them into one consolidated data.frame automatically removing the separator rows in the process. 
+
+#### Data frame with row one data
+
+```{r}
+chessData1 <- rawChessData[seq(1 , 195, 3), ]
+head(chessData1, 5)
+```
+
+#### Data frame with row two data
+
+```{r}
+chessData2 <- rawChessData[seq(2 , 195, 3), ]
+head(chessData2, 5)
+```
+
+#### Combined data.frame with one row per player, no separator rows, and column names added.
+
+```{r}
+chessData <- cbind(chessData1[-1,1:10], chessData2[-1,1:10])
+names(chessData) <- cbind(chessData1[1,1:10], chessData2[1,1:10])
+names(chessData)[c(1, 3:10, 11)] <- c('PairNum', 'TotalPts', paste('Round', 1:7, sep=""), 'State')
+rownames(chessData) <- NULL
+head(chessData, 5)
+```
+
+## Create new columns for USCFID, and both ratings
+
+The original file had multiple variables of data in one column, so I used regular expressions to separate out and create new columns for USCFID, and both ratings.
+
+```{r}
+library(stringr)
+USCFID <- str_extract_all(chessData[12], "\\d{8}")
+chessData$USCFID <- unlist(USCFID)
+RtgPre <- str_extract_all(chessData[12], "R: +\\d{3,4}")  
+RtgPre <- str_extract_all(RtgPre, "\\d{3,4}")
+chessData$RtgPre <- as.integer(unlist(RtgPre))
+RtgPost <- str_extract_all(chessData[12], "-> *\\d{3,4}")
+RtgPost <- str_extract_all(RtgPost, "\\d{3,4}")
+chessData$RtgPost <- as.integer(unlist(RtgPost))
+head(chessData[c(2,21:23)], 5)
+```
+
+## Calculate Average Pre Chess Rating of Opponents
+
+I had a lot of false starts with this section before I figured out how to do this.  I created a separate matrix with the round columns and used a regular expression to pull out just the opponents ID numbers, then used that in a loop to pull the oppenents ratings and calculate the average and add it as a new column to my original data.frame.  
+
+```{r eval=FALSE, include=FALSE}
+
+#opponents <- for (i in 1:nrow(chessData)) {
+#  opponents[i,] <- unlist(str_extract_all(chessData[i,4:10],
+#                                           "\\d{1,2}"))
+#  }
+
+chessData$opponents <- for (i in 1:nrow(chessData)) {chessData$opponents[i,] <- c(unlist(str_extract_all(chessData[i,4:10], "\\d{1,2}")))}
+chessData$opponents
+#opponents <- table(opponents)
+#opponents
+```
+
+```{r eval=FALSE, include=FALSE}
+chessData$opponents <- for (i in 1:nrow(chessData)) 
+  {n <- c(as.numeric(unlist(str_extract_all(chessData[i,4:10], "\\d{1,2}"))))
+  chessData$avgRtg[i,] <- as.integer(mean(chessData$RtgPre[n]))
+}
+```
+
+```{r eval=FALSE, include=FALSE}
+library(iterators)
+x = iter(chessData, by = "row", 
+  unlist(str_extract_all(chessData[,4:10], "\\d{1,2}")))
+x
+```
+
+```{r eval=FALSE, include=FALSE}
+chessData$avg <- rep(0,64)
+for (i in 1:64){
+  opponents <- c(as.integer(unlist(str_extract_all(chessData[i,4:10],
+                                                   "\\d{1,2}"))))
+  chessData$avg[,i] <- mean(chessData$RtgPre[opponents], na.rm = TRUE)
+}
+```
+
+```{r eval=FALSE, include=FALSE}
+chessData[24:31] <- chessData[4:10]
+for (i in 1:nrow(chessData)){
+  for (j in 24:31){
+    str_replace(chessData[i ,j],"\\w*\\s*(\\d{1,})","\\1")
+  }
+}
+
+chessData[24]
+```
+
+```{r eval=FALSE, include=FALSE}
+opponents <- t(chessData[4:10])
+opponents <- as.integer(str_replace(opponents,"\\w*\\s*(\\d{1,})","\\1"))
+opponents <- data.frame(matrix(opponents, nrow=64))
+#opponents[is.na(opponents)] <- as.numeric(0)
+#opponents
+x = as.integer(opponents[1,])
+class(x)
+x
+Average <- mean(chessData$RtgPre[x], na.rm = TRUE)  #Why isn't this taking the mean of only row one?!?!?
+Average
+```
+
+```{r eval=FALSE, include=FALSE}
+
+#  This works!!!  
+
+opponents <- t(chessData[4:10])
+opponents <- as.integer(str_replace(opponents,"\\w*\\s*(\\d{1,})","\\1"))
+opponents <- matrix(opponents, nrow=64)
+opponents[is.na(opponents)] <- as.numeric(0)
+#opponents
+
+chessData$avg <- rep(0,64)
+x = as.integer(opponents[1:7])
+Average <- mean(chessData$RtgPre[x], na.rm = TRUE)
+class(Average)
+chessData$avg[1] <- Average
+```
+
+```{r quietly=TRUE}
+
+opponents <- t(chessData[4:10])
+opponents <- as.integer(str_replace(opponents,"\\w*\\s*(\\d{1,})","\\1"))
+opponents <- matrix(opponents, nrow=64)
+
+x <- 1
+for (i in 1:nrow(chessData)){
+  y = as.integer(opponents[x:(x+6)])
+  Average <- round(mean(chessData$RtgPre[y], na.rm = TRUE))
+  chessData$avgOppRating[i] <- Average
+  x <- x+7
+}
+head(chessData[1,2,25])
+```
+
+## Create new data.frame with just the required columns of data
+
+Player’s Name, Player’s State, Total Number of Points, Player’s Pre-Rating, and Average Pre Chess Rating of Opponents
+
+```{r}
+finalChessData <- chessData[,c(2,11,3,22,24)]
+head(finalChessData)
+```
+
+## Export to CSV!
+
+```{r}
+write.csv(finalChessData, file = "chess.csv", row.names = FALSE)
+```
+
+## Final Thoughts
+
+I struggled with a few sections of this poject, but learned a lot along the way.  I have a feeling if I went back and tried my original ideas again, probably I could get them to work now after all the troubleshooting I did trying different solutions.  I find that it's hard to troublshoot in R.  Error messages are not always as descritive as I am used to from working with Python.  Often I find that my problems are with earlier steps and data that is of the wrong type, rather than errors in the code that gives me the error.  I need to figure out a better way of finding my mistakes and making sure data is the right type.
