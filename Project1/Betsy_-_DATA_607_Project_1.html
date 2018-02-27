@@ -438,9 +438,8 @@ head(chessData[c(2,21:23)], 5)</code></pre>
 <h2>Calculate Average Pre Chess Rating of Opponents</h2>
 <p>I had a lot of false starts with this section before I figured out how to do this. I created a separate matrix with the round columns and used a regular expression to pull out just the opponents ID numbers, then used that in a loop to pull the oppenents ratings and calculate the average and add it as a new column to my original data.frame.</p>
 <pre class="r"><code>opponents &lt;- t(chessData[4:10])
-opponents &lt;- as.integer(str_replace(opponents,&quot;\\w*\\s*(\\d{1,})&quot;,&quot;\\1&quot;))</code></pre>
-<pre><code>## Warning: NAs introduced by coercion</code></pre>
-<pre class="r"><code>opponents &lt;- matrix(opponents, nrow=64)
+opponents &lt;- as.integer(str_replace(opponents,&quot;\\w*\\s*(\\d{1,})&quot;,&quot;\\1&quot;))
+opponents &lt;- matrix(opponents, nrow=64)
 
 x &lt;- 1
 for (i in 1:nrow(chessData)){
@@ -449,8 +448,14 @@ for (i in 1:nrow(chessData)){
   chessData$avgOppRating[i] &lt;- Average
   x &lt;- x+7
 }
-head(chessData[1,2,25])</code></pre>
-<pre><code>## [1] &quot; GARY HUA                        &quot;</code></pre>
+head(chessData[,c(1,2,24)])</code></pre>
+<pre><code>##   PairNum  Player Name                      avgOppRating
+## 1      1   GARY HUA                                 1605
+## 2      2   DAKSHESH DARURI                          1469
+## 3      3   ADITYA BAJAJ                             1564
+## 4      4   PATRICK H SCHILLING                      1574
+## 5      5   HANSHI ZUO                               1501
+## 6      6   HANSEN SONG                              1519</code></pre>
 </section>
 <section id="create-new-data.frame-with-just-the-required-columns-of-data" class="level2">
 <h2>Create new data.frame with just the required columns of data</h2>

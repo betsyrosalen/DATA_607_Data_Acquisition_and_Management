@@ -167,7 +167,7 @@ class(Average)
 chessData$avg[1] <- Average
 ```
 
-```{r quietly=TRUE}
+```{r warning=FALSE}
 
 opponents <- t(chessData[4:10])
 opponents <- as.integer(str_replace(opponents,"\\w*\\s*(\\d{1,})","\\1"))
@@ -180,7 +180,7 @@ for (i in 1:nrow(chessData)){
   chessData$avgOppRating[i] <- Average
   x <- x+7
 }
-head(chessData[1,2,25])
+head(chessData[,c(1,2,24)])
 ```
 
 ## Create new data.frame with just the required columns of data
