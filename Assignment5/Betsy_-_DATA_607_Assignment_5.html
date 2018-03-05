@@ -2617,8 +2617,8 @@ tidyflights</code></pre>
          percent_on_time = round(`on time`/total*100, 2),
          percent_delayed = round(delayed/total*100, 2))
 datatable(tidyflights)</code></pre>
-<div id="htmlwidget-3de9325145184b58f64c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3de9325145184b58f64c">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10"],["ALASKA","ALASKA","ALASKA","ALASKA","ALASKA","AM WEST","AM WEST","AM WEST","AM WEST","AM WEST"],["Los.Angeles","Phoenix","San.Diego","San.Francisco","Seattle","Los.Angeles","Phoenix","San.Diego","San.Francisco","Seattle"],[62,12,20,102,305,117,415,65,129,61],[497,221,212,503,1841,694,4840,383,320,210],[559,233,232,605,2146,811,5255,448,449,271],[88.91,94.85,91.38,83.14,85.79,85.57,92.1,85.49,71.27,77.49],[11.09,5.15,8.62,16.86,14.21,14.43,7.9,14.51,28.73,22.51]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>airline<\/th>\n      <th>destination<\/th>\n      <th>delayed<\/th>\n      <th>on time<\/th>\n      <th>total<\/th>\n      <th>percent_on_time<\/th>\n      <th>percent_delayed<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6703d3801ee308645f29" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6703d3801ee308645f29">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10"],["ALASKA","ALASKA","ALASKA","ALASKA","ALASKA","AM WEST","AM WEST","AM WEST","AM WEST","AM WEST"],["Los.Angeles","Phoenix","San.Diego","San.Francisco","Seattle","Los.Angeles","Phoenix","San.Diego","San.Francisco","Seattle"],[62,12,20,102,305,117,415,65,129,61],[497,221,212,503,1841,694,4840,383,320,210],[559,233,232,605,2146,811,5255,448,449,271],[88.91,94.85,91.38,83.14,85.79,85.57,92.1,85.49,71.27,77.49],[11.09,5.15,8.62,16.86,14.21,14.43,7.9,14.51,28.73,22.51]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>airline<\/th>\n      <th>destination<\/th>\n      <th>delayed<\/th>\n      <th>on time<\/th>\n      <th>total<\/th>\n      <th>percent_on_time<\/th>\n      <th>percent_delayed<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </section>
 <section id="use-dplyr-summarize-function-to-compare-airlines" class="level3">
 <h3>Use dplyr summarize function to compare airlines</h3>
@@ -2650,7 +2650,7 @@ minusPhoenix %&gt;% arrange(desc(PercentOnTime))</code></pre>
 ## 1 ALASKA          0.860
 ## 2 AM WEST         0.810</code></pre>
 <p>When you filter out Phoenix you can see that now Alaska Airlines has a better average on time percentage.</p>
-<p>So if you are flying to Phoenix take AM West! But if you are flying to any of the other destinations you have a better chance of being ontime with Alaska airlines.</p>
+<p>So if you are flying to Phoenix take AM West! But if you are flying to any of the other destinations you have a better chance of being on time with Alaska airlines.</p>
 <pre class="r"><code>Alaska &lt;- tidyflights %&gt;% filter(airline %in% c('ALASKA')) %&gt;% 
   select(airline, destination, percent_on_time)
 Alaska %&gt;% arrange(desc(percent_on_time))</code></pre>

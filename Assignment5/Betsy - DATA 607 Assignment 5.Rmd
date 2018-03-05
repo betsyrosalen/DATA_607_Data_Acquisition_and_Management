@@ -107,7 +107,7 @@ minusPhoenix %>% arrange(desc(PercentOnTime))
 
 When you filter out Phoenix you can see that now Alaska Airlines has a better average on time percentage.
 
-So if you are flying to Phoenix take AM West!  But if you are flying to any of the other destinations you have a better chance of being ontime with Alaska airlines.
+So if you are flying to Phoenix take AM West!  But if you are flying to any of the other destinations you have a better chance of being on time with Alaska airlines.
 
 ```{r}
 Alaska <- tidyflights %>% filter(airline %in% c('ALASKA')) %>% 
