@@ -1,0 +1,108 @@
+---
+title: "CUNY SPS DATA 607 Project 2"
+author: "Betsy Rosalen"
+date: "March 11, 2018"
+output:
+  html_document:
+    theme: cerulean
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Assignment Instructions
+
+*The goal of this assignment is to give you practice in preparing different datasets for downstream analysis work.*
+
+Your task is to:
+
+1. Choose any three of the “wide” datasets identified in the Week 5 Discussion items. (You may use your own dataset; please don’t use my Sample Post dataset, since that was used in your Week 5 assignment!) For each of the three chosen datasets:
+    - Create a .CSV file (or optionally, a MySQL database!) that includes all of the information included in the dataset. You’re encouraged to use a “wide” structure similar to how the information appears in the discussion item, so that you can practice tidying and transformations as described below.
+    - Read the information from your .CSV file into R, and use tidyr and dplyr as needed to tidy and transform your data. [Most of your grade will be based on this step!]
+    - Perform the analysis requested in the discussion item.
+    - Your code should be in an R Markdown file, posted to rpubs.com, and should include narrative descriptions of your data cleanup work, analysis, and conclusions.
+2. Please include in your homework submission, for each of the three chosen datasets:
+    - The URL to the .Rmd file in your GitHub repository, and
+    - The URL for your rpubs.com web page.
+
+# Dataset One
+
+## Load the Raw Data into R from CSV File
+
+```{R LoadMovieCSV}
+library(RCurl) 
+x <- getURL("https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Assignment2/Movie%20Ratings.csv") 
+movies <-data.frame(read.csv(text=x, header=TRUE))
+dim(movies)
+head(movies, 3)
+```
+
+## Use tidyr to move header row to Movie column
+
+```{r}
+library(tidyr)
+tidymovies <- gather(movies, key = 'Movie', value = 'Rating', 3:13)
+head(tidymovies)
+```
+
+## Remove Timestamp column since it's irrelevant
+
+The timestamp is just a default of Google Forms that records when teh form was submitted, but this info really is not relevant to our movie ratings at all, so I am removing it.
+
+```{r}
+library(dplyr)
+tidymovies <- tidymovies[,2:4]
+head(tidymovies)
+```
+
+## Use dplyr to split first and last names and then remove last names
+
+```{r}
+tidymovies <- separate(tidymovies, Name, c("First", "Last"), sep=" ")
+# I tried to pipe the previous line into this line, but that didn't work for some reason?
+tidymovies <- select(tidymovies, First, Movie, Rating)
+head(tidymovies)
+```
+
+## Replace all the periods in the movie names with a space
+
+```{r}
+library(stringr)
+tidymovies$Movie <- str_replace_all(tidymovies$Movie, "\\.+", " ")
+library(DT)
+head(tidymovies)
+```
+
+## Do some analysis with dplyr
+
+```{r}
+
+```
+
+
+
+# Dataset Two
+
+## Load the Raw Data into R from CSV File
+
+```{R LoadCSV2}
+y <- getURL("https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Assignment2/Movie%20Ratings.csv") 
+data2 <-data.frame(read.csv(text=y, header=TRUE))
+dim(data2)
+head(data2, 3)
+```
+
+
+
+# Dataset Three
+
+## Load the Raw Data into R from CSV File
+
+```{R LoadCSV3}
+z <- getURL("https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Assignment2/Movie%20Ratings.csv") 
+data3 <-data.frame(read.csv(text=z, header=TRUE))
+dim(data3)
+head(data3, 3)
+```
