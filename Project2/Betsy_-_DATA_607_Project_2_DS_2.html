@@ -317,6 +317,7 @@ $(document).ready(function () {
 <li><a href="#load-the-raw-data-into-r-from-csv-file">Load the Raw Data into R from CSV File</a></li>
 <li><a href="#use-tidyr-to-examine-the-raw-data">Use tidyr to examine the raw data</a></li>
 <li><a href="#remove-emptyuseless-columnsrows">Remove empty/useless columns/rows</a></li>
+<li><a href="#make-first-row-the-variable-names">Make first row the variable names</a></li>
 </ul></li>
 </ul>
 </div>
@@ -343,7 +344,7 @@ $(document).ready(function () {
 <pre class="r"><code>library(RCurl) </code></pre>
 <pre><code>## Loading required package: bitops</code></pre>
 <pre class="r"><code>x &lt;- getURL(&quot;https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Project2/DS2-Raffle%20Prizes.csv&quot;) 
-raffle &lt;-data.frame(read.csv(text=x, header=FALSE))</code></pre>
+raffle &lt;-data.frame(read.csv(text=x, header=FALSE, stringsAsFactors = FALSE))</code></pre>
 </div>
 <div id="use-tidyr-to-examine-the-raw-data" class="section level2">
 <h2>Use tidyr to examine the raw data</h2>
@@ -354,14 +355,14 @@ dim(raffle)</code></pre>
 <pre class="r"><code>glimpse(raffle)</code></pre>
 <pre><code>## Observations: 125
 ## Variables: 8
-## $ V1 &lt;fct&gt; association  Golf Outing, Raffle Prizes, , , quantity, , , ...
-## $ V2 &lt;fct&gt; , , , , Item, , 2016,  Golf Shirts ,  Golf Windvest ,   Ind...
+## $ V1 &lt;chr&gt; &quot;association  Golf Outing&quot;, &quot;Raffle Prizes&quot;, &quot;&quot;, &quot;&quot;, &quot;quant...
+## $ V2 &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;Item&quot;, &quot;&quot;, &quot;2016&quot;, &quot; Golf Shirts &quot;, &quot; Golf...
 ## $ V3 &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,...
-## $ V4 &lt;fct&gt; , , as of , , Cost, , , 20 each, 40, 2000,  350.00 , 300, 3...
+## $ V4 &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;as of &quot;, &quot;&quot;, &quot;Cost&quot;, &quot;&quot;, &quot;&quot;, &quot;20 each&quot;, &quot;40&quot;, &quot;200...
 ## $ V5 &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,...
-## $ V6 &lt;fct&gt; , , 3/15/2018, , Status, , , From Tukuru, From AE, From Mat...
+## $ V6 &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;3/15/2018&quot;, &quot;&quot;, &quot;Status&quot;, &quot;&quot;, &quot;&quot;, &quot;From Tukuru&quot;, &quot;...
 ## $ V7 &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,...
-## $ V8 &lt;fct&gt; , , , , Year, , , , , , , , , , , , , , , , , , , ,</code></pre>
+## $ V8 &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;Year&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;,...</code></pre>
 <pre class="r"><code>head(raffle)</code></pre>
 <pre><code>##                         V1   V2 V3     V4 V5        V6 V7   V8
 ## 1 association  Golf Outing      NA        NA           NA     
@@ -412,44 +413,25 @@ dim(raffle)</code></pre>
   summarise(val = n())</code></pre>
 <pre><code>## # A tibble: 2 x 2
 ##   V8      val
-##   &lt;fct&gt; &lt;int&gt;
+##   &lt;chr&gt; &lt;int&gt;
 ## 1 &quot;&quot;      124
 ## 2 Year      1</code></pre>
 <p>The results above confirm that those four columsn do not contain any data, so I can remove them…</p>
 </div>
 <div id="remove-emptyuseless-columnsrows" class="section level2">
 <h2>Remove empty/useless columns/rows</h2>
-<p>I’ll use a select function to remove the empty columns identified above and while I am at it remove the empty rows at the top of the dataframe as well.</p>
+<p>I’ll use a select function to remove the empty columns identified above and while I am at it remove the empty/useless rows at the top of the dataframe as well.</p>
 <pre class="r"><code>tidyraffle &lt;- tail(raffle, 121) %&gt;%
   select(-c(3,5,7,8))
 
-head(tidyraffle, 12)</code></pre>
-<pre><code>##          V1                            V2       V4
-## 5  quantity                          Item     Cost
-## 6                                                 
-## 7                                    2016         
-## 8         4                  Golf Shirts   20 each
-## 9         1                Golf Windvest        40
-## 10        4   Individual Golf Clubs sets      2000
-## 11        1               Surface Tablet   350.00 
-## 12        1                      Whitney       300
-## 13        1                        Drone       300
-## 14        1                         Ipad       400
-## 15        1                       laptop       700
-## 16        1              35&quot; flat screen       500
-##                                      V6
-## 5                                Status
-## 6                                      
-## 7                                      
-## 8                           From Tukuru
-## 9                               From AE
-## 10                          From Matt B
-## 11  From Tukuru to be delivered 6/9/16 
-## 12                          From Tukuru
-## 13                          From Tukuru
-## 14                        From Gretchen
-## 15                         From Dewault
-## 16                              From AE</code></pre>
+head(tidyraffle)</code></pre>
+<pre><code>##          V1                            V2      V4          V6
+## 5  quantity                          Item    Cost      Status
+## 6                                                            
+## 7                                    2016                    
+## 8         4                  Golf Shirts  20 each From Tukuru
+## 9         1                Golf Windvest       40     From AE
+## 10        4   Individual Golf Clubs sets     2000 From Matt B</code></pre>
 <pre class="r"><code>tail(tidyraffle)</code></pre>
 <pre><code>##     V1                 V2       V4                                      V6
 ## 120  4   AMC movie passes   50.00                            From  Matt B 
@@ -458,6 +440,256 @@ head(tidyraffle, 12)</code></pre>
 ## 123  5 5 dozen Golf Balls   60.00                                 From DM 
 ## 124  1        Gift Basket   40.00                                  From DM
 ## 125  1       ASCE 7 on CD   20.00  From Whatever the hell that is from Joe</code></pre>
+</div>
+<div id="make-first-row-the-variable-names" class="section level2">
+<h2>Make first row the variable names</h2>
+<pre class="r"><code>tidyraffle[1, ] </code></pre>
+<pre><code>##         V1   V2   V4     V6
+## 5 quantity Item Cost Status</code></pre>
+<pre class="r"><code>colnames(tidyraffle) &lt;- tidyraffle[1, ] # the first row will be the header
+tidyraffle &lt;- tidyraffle[-c(1,2), ] # removing the first 2 rows
+tidyraffle</code></pre>
+<pre><code>##     quantity                                                    Item
+## 7                                                               2016
+## 8          4                                            Golf Shirts 
+## 9          1                                          Golf Windvest 
+## 10         4                             Individual Golf Clubs sets 
+## 11         1                                         Surface Tablet 
+## 12         1                                                Whitney 
+## 13         1                                                  Drone 
+## 14         1                                                   Ipad 
+## 15         1                                                 laptop 
+## 16         1                                        35&quot; flat screen 
+## 17         1                            Noise cancelling headphones 
+## 18         1                                    Blue Tooth speakers 
+## 19         1                                           Gopro camera 
+## 20                                                                  
+## 21                                                                  
+## 22                                                                  
+## 23                                                                  
+## 24                                                              2015
+## 25         4                                            Golf Shirts 
+## 26         1                                          Golf Windvest 
+## 27         4                                  Individual Golf Clubs 
+## 28         1                                              Think Pad 
+## 29         2                 tickets and a catalgue for the Whitney 
+## 30         1                                          go pro camera 
+## 31         1                                                   Ipad 
+## 32         1                                                 laptop 
+## 33         1                                        35&quot; flat screen 
+## 34         1                            Noise cancelling headphones 
+## 35                                                                  
+## 36         4   All inclusive American Museum of    Natural History  
+## 37                                                                  
+## 38                                                              2014
+## 39         4                                            Golf Shirts 
+## 40         1                                          Golf Windvest 
+## 41         4                                  Individual Golf Clubs 
+## 42         1                     City Sightseeing Tour of Manhattan 
+## 43         1                                                   Wine 
+## 44         1                     Lap top (extra per JFT for HS kid) 
+## 45         4                                           Movie passes 
+## 46         1                      39 inch  insignia flat screen LED 
+## 47         1                            Noise canceling head phones 
+## 48         2                                                  Ipads 
+## 49         1                               Pro Shop gft certificate 
+## 50         2                 tickets and a catalgue for the Whitney 
+## 51         4   All inclusive American Museum of    Natural History  
+## 52         1                          Sony Handycam Camera Recorded 
+## 53                                                                  
+## 54                                                              2013
+## 55         4                                            Golf Shirts 
+## 56         1                                          Golf Windvest 
+## 57         4                                  Individual Golf Clubs 
+## 58         1                              Case of Walden Woods Wine 
+## 59         1                                         Flat Screen TV 
+## 60         2                                    Ipad mini's (16 GB) 
+## 61         1                                      Ipad Mini (32 GB) 
+## 62         1                            Noise Canceling Head Phones 
+## 63         2                                        Yankee Tickets  
+## 64         1                                                 Hyland 
+## 65         2           gift certificates for $97 each (prescription 
+## 66                                                                  
+## 67         2                 tickets and a catalgue for the Whitney 
+## 68         2                   tickets to Yankees Rays game 6/22/13 
+## 69                                                                  
+## 70                                                              2012
+## 71         4                                            Golf Shirts 
+## 72         1                                          Golf Windvest 
+## 73         4                                  Individual Golf Clubs 
+## 74         4      All-inclusive Museum of Natural   history passes  
+## 75                                                                  
+## 76         1                                         Flat Screen TV 
+## 77         1                                            Kindle Fire 
+## 78         1                                                   Ipad 
+## 79         1                    Appleton Rum (and game on 8th hole) 
+## 80         1                                                   Wine 
+## 81         1                       Wine related platters and cheese 
+## 82         1                                         40 Below Vodka 
+## 83         1                             Sony Handman DCR-SX44 mini 
+## 84         1                                              camcorder 
+## 85         2                                      Dozen Golf Balls  
+## 86                                                                  
+## 87                                                              2011
+## 88         4                                             Golf Shirts
+## 89         1                                           Golf Windvest
+## 90         4                                   Individual Golf Clubs
+## 91         2                                       Dozen golf balls 
+## 92         1                                    Remaining Golf Balls
+## 93         1                                                 Chances
+## 94         1                   Dinner for 2 ($150) for Tribeca Grill
+## 95         1                    $100 Gift Certificate to &quot;The Stand&quot;
+## 96         1                                              The Kindle
+## 97         1                                          Flat Screen TV
+## 98         1                         NBA Package (Satchel. T shirt, 
+## 99         1                      water bottle, post its and holder)
+## 100        1                                         HP Mini Lap Top
+## 101        1                                            iPad  (32 G)
+## 102        1                                   Case of 40below Vodka
+## 103                                                                 
+## 104                                                             2010
+## 105        1                           Gotham Restaurant certificate
+## 106        1                                              iPod Touch
+## 107        1                                          Digital Camera
+## 108        1                                          Flat Screen TV
+## 109        1                                                    Ipad
+## 110        1                             Net Flix 6 month membership
+## 111        1                                10 Downing Restaurant GC
+## 112        1                                   5 Ninth Restaurant GC
+## 113        1                  $25 Gift Certificate to Garden of Eden
+## 114        1                    $150 Gift Certificate from Artisanal
+## 115                                                                 
+## 116        1                    $100 Gift Certificate to &quot;The Stand&quot;
+## 117                                                                 
+## 118                                                             2009
+## 119        1                                                     GPS
+## 120        4                                        AMC movie passes
+## 121        1                                          Portable Grill
+## 122        5                                      5 dozen Golf Balls
+## 123        5                                      5 dozen Golf Balls
+## 124        1                                             Gift Basket
+## 125        1                                            ASCE 7 on CD
+##            Cost                                  Status
+## 7                                                      
+## 8       20 each                             From Tukuru
+## 9            40                                 From AE
+## 10         2000                             From Matt B
+## 11      350.00      From Tukuru to be delivered 6/9/16 
+## 12          300                             From Tukuru
+## 13          300                             From Tukuru
+## 14          400                           From Gretchen
+## 15          700                            From Dewault
+## 16          500                                 From AE
+## 17          400                                 From AE
+## 18          373                            From Dewault
+## 19          250                            From Dewault
+## 20                                                     
+## 21                                                     
+## 22                                                     
+## 23                                                     
+## 24                                                     
+## 25      200.00                              From Matt B
+## 26       50.00                              From Matt B
+## 27    1,925.00                                         
+## 28      300.00                            From Tukuru  
+## 29      150.00                                From AE  
+## 30      200.00                              From Matt B
+## 31      500.00                                         
+## 32      700.00                                  From AE
+## 33    1,281.00                            From Gretchen
+## 34      299.00                                         
+## 35                                                     
+## 36      120.00                                         
+## 37                                                     
+## 38                                                     
+## 39      200.00                                         
+## 40       75.00                                  From AE
+## 41    1,085.00                            From Gretchen
+## 42      150.00                                  From AE
+## 43       94.46                              From Matt B
+## 44      740.87                              From Matt B
+## 45       50.00                                         
+## 46      329.99                            From Gretchen
+## 47      299.99                                         
+## 48      599.98                                  From AE
+## 49      200.00                              From Matt B
+## 50      120.00                                         
+## 51      120.00                              From Tukuru
+## 52                                          From Tukuru
+## 53                                                     
+## 54                                                     
+## 55      200.00                                  From AE
+## 56       75.00                            From Gretchen
+## 57    1,085.00                                         
+## 58      400.00                                  From AE
+## 59      269.99                              From Matt B
+## 60      659.98                              From Matt B
+## 61      385.00                              From Tukuru
+## 62       279.99                           From Gretchen
+## 63          120                              From Kevin
+## 64            0                           From Gretchen
+## 65          194                  From Tortoise &amp; Blonde
+## 66                                                     
+## 67           40                                 From AE
+## 68          120                                        
+## 69                                                     
+## 70                                                     
+## 71      204.00                                From JFT 
+## 72       74.00                                From JFT 
+## 73      959.00                                From JFT 
+## 74      135.00                             From Jeff B 
+## 75                                                     
+## 76      450.00                             From Graham 
+## 77      200.00                             From Graham 
+## 78      500.00                              From Liviu 
+## 79      450.00                    From Friend of Joe's 
+## 80       80.00                    From Friend of Joe's 
+## 81       80.00                    From Friend of Joe's 
+## 82       20.00                From Friends of Gretchen 
+## 83      450.00                           From Gretchen 
+## 84      400.00                             From Tukuru 
+## 85       30.00                            From Deborah 
+## 86                                                     
+## 87                                                     
+## 88      204.00                                 From JFT
+## 89       74.00                            From Gretchen
+## 90      959.00                                From JFT 
+## 91       30.00                               From Hilti
+## 92       10.00                           From Southbend
+## 93       19.50                                From Pat 
+## 94          150                               From Pat 
+## 95      100.00                                  From AE
+## 96      152.41                              From Graham
+## 97      304.84                              From Graham
+## 98      120.00                           From who??????
+## 99           20                                 From AE
+## 100     350.00                 from Tukuro Technologies
+## 101     652.16                               From Liviu
+## 102       0.00                            From Gretchen
+## 103                                                    
+## 104                                                    
+## 105     250.00                                From Nat 
+## 106     250.00                             From Matt B 
+## 107     150.00                             From Matt B 
+## 108     590.00                             From Matt B 
+## 109     500.00                 From Tukuro Technologies
+## 110      50.00                               From Liviu
+## 111      20.00                              From Erica 
+## 112      20.00                             From  Erica 
+## 113      25.00                                From Lyn 
+## 114         150                              From  GCL 
+## 115                                                    
+## 116         100                               From  Joe
+## 117                                                    
+## 118                                                    
+## 119     150.00                            From  Matt B 
+## 120      50.00                            From  Matt B 
+## 121     240.00                               From  JFT 
+## 122      60.00                                  From DM
+## 123      60.00                                 From DM 
+## 124      40.00                                  From DM
+## 125      20.00  From Whatever the hell that is from Joe</code></pre>
+<pre class="r"><code>rownames(tidyraffle) &lt;- NULL</code></pre>
 </div>
 </div>
 

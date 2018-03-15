@@ -33,7 +33,7 @@ The second dataset I chose because I wanted a challenge and this dataset is part
 ```{R LoadMovieCSV}
 library(RCurl) 
 x <- getURL("https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Project2/DS2-Raffle%20Prizes.csv") 
-raffle <-data.frame(read.csv(text=x, header=FALSE))
+raffle <-data.frame(read.csv(text=x, header=FALSE, stringsAsFactors = FALSE))
 ```
 
 ## Use tidyr to examine the raw data
@@ -69,16 +69,23 @@ The results above confirm that those four columsn do not contain any data, so I 
 
 ## Remove empty/useless columns/rows
 
-I'll use a select function to remove the empty columns identified above and while I am at it remove the empty rows at the top of the dataframe as well.
+I'll use a select function to remove the empty columns identified above and while I am at it remove the empty/useless rows at the top of the dataframe as well.
 
 ```{r}
 tidyraffle <- tail(raffle, 121) %>%
   select(-c(3,5,7,8))
 
-head(tidyraffle, 12)
+head(tidyraffle)
 tail(tidyraffle)
 ```
 
+## Make first row the variable names
 
-
+```{r}
+tidyraffle[1, ] 
+colnames(tidyraffle) <- tidyraffle[1, ] # the first row will be the header
+tidyraffle <- tidyraffle[-c(1,2), ] # removing the first 2 rows
+tidyraffle
+rownames(tidyraffle) <- NULL
+```
 
