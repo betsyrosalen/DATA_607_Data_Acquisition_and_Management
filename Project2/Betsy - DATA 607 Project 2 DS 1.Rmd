@@ -95,7 +95,7 @@ reviews <- tidymovies[!is.na(tidymovies$Rating),]
 # Num of ratings for each film
 ratings_per_film <- reviews %>% 
   group_by(Movie) %>%
-  summarise(Num_Reviews = length(unique(First))) %>% 
+  summarise(Num_Reviews = n_distinct(First)) %>% 
   arrange(desc(Num_Reviews))
 ratings_per_film
 ```
@@ -109,10 +109,18 @@ avg_rating_by_movie
 ```
 
 ```{r}
+library(ggplot2)
+ggplot(tidymovies) +
+  geom_point(mapping = aes(x=Rating, y=Movie, color=First))
+```
+
+
+
+```{r}
 # Num of ratings for each reviewer
 num_ratings <- reviews %>% 
   group_by(First) %>%
-  summarise(Num_Reviews = length(unique(Movie))) %>% 
+  summarise(Num_Reviews = n_distinct(Movie)) %>% 
   arrange(desc(Num_Reviews))
 num_ratings
 ```
