@@ -96,7 +96,7 @@ I thought about removing all the NA's from my dataset, but decided not to do tha
 
 ## Summary analysis with dplyr and ggplot2
 
-First I want to see the average rating for each movie, but keeping in mind that some movies were only seen by a few of the repondents so their average rating may be biased by the lack of response.  
+First I want to see the average rating for each movie, but keeping in mind that some movies were only seen by a few of the respondents so their average rating may be biased by the lack of response.  
 
 ```{r}
 avg_rating_by_movie <- tidymovies %>% 
@@ -111,7 +111,7 @@ avg_rating_by_movie %>% arrange(desc(Num_Reviews))
 
 The numbers above confirm that the highest rated films are also the films with the highest viewing numbers.  All 7 of the highest rated movies are the same 7 movies with the greatest number of reviewers. My guess is it's likely the movies with low attendance numbers have low attendance because people pre-judge the films based on trailers and other advertisements.  
 
-Maybe viewers already know or believe they know with a high level of certainty whether they will like or not like a film before they even go see it and watching the film only confirms what they already thought anyway in most cases.  If reviewers were not pre-judging films accurately, you wold expect there to be more low ratings where people thought they wouold like a film and then were disappointed.
+Maybe viewers already know or believe they know with a high level of certainty whether they will like or not like a film before they even go see it and watching the film only confirms what they already thought anyway in most cases.  If reviewers were not pre-judging films accurately, you wold expect there to be more low ratings where people thought they would like a film and then were disappointed.  I guess in general people know what they like!
 
 ```{r}
 library(ggplot2)
@@ -119,7 +119,7 @@ ggplot(avg_rating_by_movie) +
   geom_point(mapping = aes(x=Avg_Rating, y=Movie, color=Num_Reviews))
 ```
 
-There are few low ratings in the dataset at all.  You can see belwo that therre was only 1 rating of 1 in the entire dataset and 7 ratings of 2 out of 108 total reviews.  I wonder if more reviewers had watched more of the films if there would be more low ratings?
+There are very few low ratings (under 3) in the dataset at all.  You can see below that there was only 1 rating of 1 in the entire dataset and 7 ratings of 2 out of 108 total reviews.  I wonder if more reviewers had watched more of the films if there would be more low ratings?  Or would they have liked the films if they saw them?
 
 ```{r}
 tidymovies %>% 
@@ -131,11 +131,18 @@ tidymovies %>%
   summarise(n())
 ```
 
+```{r}
+hist(tidymovies$Rating, breaks = 15, xlim=c(1,5), col="blue")
+```
+
+
 The average rating for all movies in the dataset is 3.98
 
 ```{r}
 tidymovies %>% summarise(round(mean(Rating, na.rm=TRUE),2))
 ```
+
+You can see below that the reviewers who gave the highest average ratings were mostly those who saw very few films.
 
 ```{r}
 # Average rating given by each reviewer
@@ -154,3 +161,7 @@ library(ggplot2)
 ggplot(avg_rating_by_reviewer) +
   geom_point(mapping = aes(x=Avg_Rating, y=Reviewer, color=Num_Movies))
 ```
+
+## Conclusion
+
+I don't think there's really enough data here to say very much about these films.  Especially because I think it is important to have more than a few ratings for each film.  My sample size was way too small.  Maybe it isn't important for all reviewers to have seen all films, but I'd be curious if there would be more low ratings if they did.

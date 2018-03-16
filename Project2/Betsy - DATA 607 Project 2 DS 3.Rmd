@@ -24,22 +24,48 @@ Your task is to:
     - Perform the analysis requested in the discussion item.
     - Your code should be in an R Markdown file, posted to rpubs.com, and should include narrative descriptions of your data cleanup work, analysis, and conclusions.
 
-# Dataset Three
+# Dataset Three - NYPD Crime Data
 
 ## Load the Raw Data into R from CSV File
 
 ```{R LoadMovieCSV}
 library(RCurl) 
-x <- getURL("https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Assignment2/Movie%20Ratings.csv") 
-movies <-data.frame(read.csv(text=x, header=TRUE, stringsAsFactors = FALSE))
-dim(movies)
-head(movies, 3)
+x <- getURL("https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Project2/DS3-1-seven-major-felony-offenses-2000-2017.csv") 
+crime <-data.frame(read.csv(text=x, header=FALSE, stringsAsFactors = FALSE))
+dim(crime)
+str(crime)
+head(crime, 12)
 ```
 
-## Use tidyr to 
+## Use tidyr to 'tidy' the data
+
+First let's remove the two basically blank rows a the top and make the third row the header row.
 
 ```{r}
 library(tidyr)
-
+# make the third row the header row
+colnames(crime) <- crime[3,]
+# then remove the first 3 rows
+crime <- crime[-c(1:3),]
+# reset the row indexing
+rownames(crime) <- NULL
 ```
+
+OK, now let's check out the top and bottom of our data just to get a sense of what is there...
+
+```{r}
+head(crime, 12)
+tail(crime, 24)
+```
+
+I can see the bottom of the data has some info that really belongs in a separate file or dataframe because it is data about our data, or metadata, not actually part of the dataset.  Looks like our data actually ends on row 624 and our "Statistical Notes" start on Row 628, so let's remove those rows and put the "Statistical Notes" in a separate dataframe for now just so we don't lose that info.
+
+```{r}
+# Put the Statistical notes in a separate dataframe 
+StatisticalNotes <- crime[-(1:627),]
+
+# Remove the Statistical Notes and blank rows from the bottom of the crime dataframe
+crime <- crime[(1:624),]
+```
+
 
