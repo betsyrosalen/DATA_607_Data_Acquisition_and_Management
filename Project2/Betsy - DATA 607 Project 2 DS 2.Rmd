@@ -50,6 +50,17 @@ tail(raffle)
 
 This data is so messy it's hard to see what's going on, but it looks like columns V3, V5, V7, and V8 do not contain any data at all.  Columns V3, V5, and V7 are all NA's and column V8 only has the word 'Year' in one observation and the rest look like empty strings. But just to be sure I will use dplyr to look for unique values in each of those columns.
 
+```{r eval=FALSE, include=FALSE}
+columns <- paste('V',c(3,5,7,8), sep="")
+columns
+lapply(columns, function(x){
+  raffle %>%
+    group_by(x) %>%
+    summarise(val = n())
+  })
+```
+
+
 ```{r}
 raffle %>% 
   group_by(V3) %>%
@@ -65,7 +76,7 @@ raffle %>%
   summarise(val = n())
 ```
 
-The results above confirm that those four columsn do not contain any data, so I can remove them...
+The results above confirm that those four columns do not contain any data, so I can remove them...
 
 ## Remove empty/useless columns/rows
 
@@ -82,10 +93,15 @@ tail(tidyraffle)
 ## Make first row the variable names
 
 ```{r}
-tidyraffle[1, ] 
 colnames(tidyraffle) <- tidyraffle[1, ] # the first row will be the header
 tidyraffle <- tidyraffle[-c(1,2), ] # removing the first 2 rows
-tidyraffle
 rownames(tidyraffle) <- NULL
+head(tidyraffle)
+```
+
+```{r}
+library(stringr)
+loc <- str_locate_all(tidyraffle$Item, "\\d{4}")
+loc
 ```
 
