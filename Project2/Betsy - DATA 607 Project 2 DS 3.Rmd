@@ -26,23 +26,25 @@ Your task is to:
 
 # Dataset Three - NYPD Crime Data
 
-## Load the Raw Data into R from CSV File
+The third dataset contains [historical New York City crime data](http://www1.nyc.gov/site/nypd/stats/crime-statistics/historical.page) from the nyc.gov NYPD website.  
 
-```{R LoadMovieCSV}
+## Load the raw data into R from csv file
+
+I downloaded the data for the “Seven Major Felony Offenses” as an excel file and then saved that as a csv file for importing into R.  The data set contains totals for each of the seven major felony offenses (Murder & Non Negl. Manslaughter, Rape, Robbery, Felony Assault, Burglary, Grand Larceny, and Grand Larceny of Motor Vehicle) for each year and a grand total line for each year for each precinct.
+
+```{r message=FALSE}
 library(RCurl) 
 x <- getURL("https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Project2/DS3-1-seven-major-felony-offenses-2000-2017.csv") 
 crime <-data.frame(read.csv(text=x, header=FALSE, stringsAsFactors = FALSE))
 dim(crime)
-str(crime)
-head(crime, 12)
+head(crime, 5)
 ```
 
-## Use tidyr to 'tidy' the data
+## Fix header and remove blank rows
 
-First let's remove the two basically blank rows a the top and make the third row the header row.
+First let's remove the two blank rows at the top and make the third row the header row.
 
 ```{r}
-library(tidyr)
 # make the third row the header row
 colnames(crime) <- crime[3,]
 # then remove the first 3 rows
@@ -54,18 +56,115 @@ rownames(crime) <- NULL
 OK, now let's check out the top and bottom of our data just to get a sense of what is there...
 
 ```{r}
-head(crime, 12)
-tail(crime, 24)
+head(crime, 5)
+tail(crime[,1:10], 14)
 ```
 
-I can see the bottom of the data has some info that really belongs in a separate file or dataframe because it is data about our data, or metadata, not actually part of the dataset.  Looks like our data actually ends on row 624 and our "Statistical Notes" start on Row 628, so let's remove those rows and put the "Statistical Notes" in a separate dataframe for now just so we don't lose that info.
+## Remove 'Statistical Notes' from the bottom of the dataset
+
+The bottom of the dataset has some info that really belongs in a separate file or dataframe because it is metadata, not actually part of the dataset.  Looks like our data actually ends on row 624 and our "Statistical Notes" start on Row 628, so let's remove those rows and put the "Statistical Notes" in a separate dataframe for now just so we don't lose that info.
 
 ```{r}
 # Put the Statistical notes in a separate dataframe 
-StatisticalNotes <- crime[-(1:627),]
+StatisticalNotes <- crime[-(1:627),1]
 
 # Remove the Statistical Notes and blank rows from the bottom of the crime dataframe
 crime <- crime[(1:624),]
+```
+
+## Fill in the precinct in rows where it's blank
+
+Every 8 rows refers to the "Seven Major Felony Offenses" plus a total row for each precinct in the dataset. The precinct number was only filled in on the first row of each section.  To tidy our data we need to fill it in on the other seven rows for the precinct.
+
+```{r message=FALSE}
+library(tidyverse)
+for (x in 2:8){
+  crime[seq(x,624,8),1] <- crime[seq(1,624,8),1]
+}
+glimpse(crime)
+sample_n(crime, 5)
+```
+
+## Remove total rows and convert our wide data to long
+
+The tidyr gather function makes it easy to make our wide data long so that it is easier to analyze.
+
+```{r}
+tidycrime <- crime %>%
+  filter(CRIME != 'TOTAL SEVEN MAJOR FELONY OFFENSES') %>%
+  gather("Year", "n", 3:20)
+
+sample_n(tidycrime, 10)
+```
+
+## Last but not least...
+
+Let's look at the 'Statistical Notes' to see if there's anything in there we need to know before doing our analysis.
+
+```{r}
+StatisticalNotes
+```
+
+There are definitely some notes in there that we should keep in mind as we do our analysis.  For example, "The 121 pct was created on 7-1-2013 from parts of the 120 and 122 precinct.  Therefore statistics for 120 and 122 precincts following 2012 are not comparable to earlier years."  So if we are looking at specific precincts we need to keep things like this in mind.  If we want to look at the entire date range we would have to aggregate those three precincts in order to get relevant statistics.  
+
+## Exploratory data analysis
+
+First let's see the totals by type of crime...
+
+```{r}
+tidycrime %>%
+  group_by(CRIME) %>%
+  summarise(Totals = sum(n, na.rm=TRUE)) %>%
+  arrange(desc(Totals))
+```
+
+We can get totals by precinct, but without population numbers it's hard to compare one precinct to another.  Also, the numbers are affected by the 'Statistical Notes' we looked at earlier, so this may not be very useful info...
+
+```{r}
+tidycrime %>%
+  group_by(PCT) %>%
+  summarise(Totals = sum(n, na.rm=TRUE)) %>%
+  arrange(desc(Totals))
+```
+
+Let's look at just the 120, 121, and 122 precincts together since those numbers can't really be separated and let's add the 123rd precint too since that would encompass all of Staten Island, which is where I live...
+
+```{r}
+SICrime <- tidycrime %>%
+  filter(PCT %in% c('121', '122', '123', '124')) %>%
+  group_by(Year, CRIME) %>%
+  summarise(Totals = sum(n, na.rm=TRUE)) %>%
+  arrange(desc(Year))
+
+SICrime
+```
+
+Now let's graph that to see the trend...
+
+```{r}
+ggplot(SICrime, aes(x=Year, y=Totals, group=CRIME)) +
+  geom_line(aes(color=CRIME)) +
+  theme(axis.text.x = element_text(angle = 90, vjust=0.5, size = 8))
+```
+
+Now let's compare that to the rest of the city...
+
+```{r}
+NotSICrime <- tidycrime %>%
+  filter(!(PCT %in% c('121', '122', '123', '124'))) %>%
+  group_by(Year, CRIME) %>%
+  summarise(Totals = sum(n, na.rm=TRUE)) %>%
+  arrange(desc(Year))
+
+NotSICrime
+```
+
+Now let's graph that to see if the trends look similar to those we saw on Statne Island...
+
+```{r}
+ggplot(NotSICrime, aes(x=Year, y=Totals, group=CRIME)) +
+  geom_line(aes(color=CRIME)) +
+  theme(axis.text.x = element_text(angle = 90, vjust=0.5, size = 8))
 ```
 
 
