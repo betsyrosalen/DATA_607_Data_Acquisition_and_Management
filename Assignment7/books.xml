@@ -1,0 +1,44 @@
+<?xml version="1.0">
+<favbooks>
+
+	<book>
+		<title>The Design of Dissent, Expanded Edition: Greed, Nationalism, Alternative Facts, and the Resistance</title>
+		<author>Milton Glaser</author>
+		<author>Mirko Ilic</author>
+		<author>Steven Heller</author>
+		<author>Tony Kushner</author>
+		<ISBN-13>978-1631594243</ISBN-13>
+		<pages>296</pages>
+		<binding>Flexibound</binding>
+		<amazonURL><a href="http://a.co/0KWAXs7">http://a.co/0KWAXs7</amazonURL>
+	</book>
+
+	<book>
+		<title></title>
+		<author></author>
+		<ISBN-13></ISBN-13>
+		<pages></pages>
+		<binding></binding>
+		<amazonURL></amazonURL>
+	</book>
+	
+	<book>
+		<title>Breaking the Maya Code</title>
+		<author>Michael D. Coe</author>
+		<ISBN-13>978-0500289556</ISBN-13>
+		<pages>304</pages>
+		<binding>Paperback</binding>
+		<amazonURL><a href="http://a.co/esWdAA8">http://a.co/esWdAA8</amazonURL>
+	</book>
+
+	<book>
+		<title>Reading the Maya Glyphs</title>
+		<author>Michael D. Coe</author>
+		<author>Mark Van Stone</author>
+		<ISBN-13>978-0500285534</ISBN-13>
+		<pages>176</pages>
+		<binding>Paperback</binding>
+		<amazonURL><a href="http://a.co/0O6t7t9">http://a.co/0O6t7t9</a></amazonURL>
+	</book>
+	
+</favbooks>
