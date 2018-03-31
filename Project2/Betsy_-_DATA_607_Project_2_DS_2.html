@@ -2580,35 +2580,18 @@ dim(raffle)</code></pre>
 ## 124                                 From DM NA   
 ## 125 From Whatever the hell that is from Joe NA</code></pre>
 <p>This data is so messy it’s hard to see what’s going on, but it looks like columns V3, V5, V7, and V8 do not contain any data at all. Columns V3, V5, and V7 are all NA’s and column V8 only has the word ‘Year’ in one observation and the rest look like empty strings. But just to be sure I will use dplyr to look for unique values in each of those columns.</p>
-<pre class="r"><code>raffle %&gt;% 
-  group_by(V3) %&gt;%
-  summarise(val = n())</code></pre>
-<pre><code>## # A tibble: 1 x 2
-##   V3      val
-##   &lt;lgl&gt; &lt;int&gt;
-## 1 NA      125</code></pre>
-<pre class="r"><code>raffle %&gt;% 
-  group_by(V5) %&gt;%
-  summarise(val = n())</code></pre>
-<pre><code>## # A tibble: 1 x 2
-##   V5      val
-##   &lt;lgl&gt; &lt;int&gt;
-## 1 NA      125</code></pre>
-<pre class="r"><code>raffle %&gt;% 
-  group_by(V7) %&gt;%
-  summarise(val = n())</code></pre>
-<pre><code>## # A tibble: 1 x 2
-##   V7      val
-##   &lt;lgl&gt; &lt;int&gt;
-## 1 NA      125</code></pre>
-<pre class="r"><code>raffle %&gt;% 
-  group_by(V8) %&gt;%
-  summarise(val = n())</code></pre>
-<pre><code>## # A tibble: 2 x 2
-##   V8      val
-##   &lt;chr&gt; &lt;int&gt;
-## 1 &quot;&quot;      124
-## 2 Year      1</code></pre>
+<pre class="r"><code>columns &lt;- paste('V',c(3,5,7,8), sep=&quot;&quot;)
+columns</code></pre>
+<pre><code>## [1] &quot;V3&quot; &quot;V5&quot; &quot;V7&quot; &quot;V8&quot;</code></pre>
+<pre class="r"><code>func &lt;- function(column, df){
+   df %&gt;%
+   group_by_(column) %&gt;%
+   summarise(val = n())
+}
+
+unlist(lapply(columns, func, raffle))</code></pre>
+<pre><code>##     V3    val     V5    val     V7    val    V81    V82   val1   val2 
+##     NA  &quot;125&quot;     NA  &quot;125&quot;     NA  &quot;125&quot;     &quot;&quot; &quot;Year&quot;  &quot;124&quot;    &quot;1&quot;</code></pre>
 <p>The results above confirm that those four columns do not contain any data. The word year is the only value entered in the V8 column but that really belongs in the header and there’s nothing else in that column so I can remove it along with the other 3 columns…</p>
 </div>
 <div id="remove-emptyuseless-columnsrows" class="section level2">
@@ -2976,8 +2959,8 @@ donors &lt;- tidyraffle %&gt;%
   group_by(Status, Year) %&gt;%
   summarise(avg_cost = mean(Cost, na.rm = TRUE))
 datatable(donors)</code></pre>
-<div id="htmlwidget-9845086ecbcb204185de" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9845086ecbcb204185de">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58"],["","",""," From AE  "," From Deborah "," From Friend of Joe's "," From Friends of Gretchen "," From Graham "," From Gretchen "," From Jeff B "," From JFT "," From Liviu "," From Tukuru "," From Tukuru  "," From Tukuru to be delivered 6/9/16 ","From  Erica ","From  GCL ","From  JFT ","From  Joe","From  Matt B ","From AE","From AE","From AE","From AE","From AE","From Dewault","From DM","From DM ","From Erica ","From Graham","From Gretchen","From Gretchen","From Gretchen","From Gretchen","From Gretchen","From Hilti","From JFT","From JFT ","From Kevin","From Liviu","From Liviu","From Lyn ","From Matt B","From Matt B","From Matt B","From Matt B","From Matt B ","From Nat ","From Pat ","From Southbend","From Tortoise &amp; Blonde","from Tukuro Technologies","From Tukuro Technologies","From Tukuru","From Tukuru","From Tukuru","From Whatever the hell that is from Joe","From who??????"],["2013","2014","2015","2015","2012","2012","2012","2012","2012","2012","2012","2012","2012","2015","2016","2010","2010","2009","2010","2009","2011","2013","2014","2015","2016","2016","2009","2009","2010","2011","2011","2013","2014","2015","2016","2011","2011","2011","2013","2010","2011","2010","2013","2014","2015","2016","2010","2010","2011","2011","2013","2011","2010","2013","2014","2016","2009","2011"],[602.5,167.4975,711,150,30,203.333333333333,20,325,450,135,412.333333333333,500,400,300,350,20,150,240,100,100,60,213.333333333333,274.993333333333,700,313.333333333333,441,50,60,20,228.625,37,118.33,707.495,1281,400,30,204,959,120,50,652.16,25,464.985,345.11,150,2000,330,250,84.75,10,194,350,500,385,120,226.666666666667,20,120]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Status<\/th>\n      <th>Year<\/th>\n      <th>avg_cost<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cd5c369a6b32e3226da8" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cd5c369a6b32e3226da8">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58"],["","",""," From AE  "," From Deborah "," From Friend of Joe's "," From Friends of Gretchen "," From Graham "," From Gretchen "," From Jeff B "," From JFT "," From Liviu "," From Tukuru "," From Tukuru  "," From Tukuru to be delivered 6/9/16 ","From  Erica ","From  GCL ","From  JFT ","From  Joe","From  Matt B ","From AE","From AE","From AE","From AE","From AE","From Dewault","From DM","From DM ","From Erica ","From Graham","From Gretchen","From Gretchen","From Gretchen","From Gretchen","From Gretchen","From Hilti","From JFT","From JFT ","From Kevin","From Liviu","From Liviu","From Lyn ","From Matt B","From Matt B","From Matt B","From Matt B","From Matt B ","From Nat ","From Pat ","From Southbend","From Tortoise &amp; Blonde","from Tukuro Technologies","From Tukuro Technologies","From Tukuru","From Tukuru","From Tukuru","From Whatever the hell that is from Joe","From who??????"],["2013","2014","2015","2015","2012","2012","2012","2012","2012","2012","2012","2012","2012","2015","2016","2010","2010","2009","2010","2009","2011","2013","2014","2015","2016","2016","2009","2009","2010","2011","2011","2013","2014","2015","2016","2011","2011","2011","2013","2010","2011","2010","2013","2014","2015","2016","2010","2010","2011","2011","2013","2011","2010","2013","2014","2016","2009","2011"],[602.5,167.4975,711,150,30,203.333333333333,20,325,450,135,412.333333333333,500,400,300,350,20,150,240,100,100,60,213.333333333333,274.993333333333,700,313.333333333333,441,50,60,20,228.625,37,118.33,707.495,1281,400,30,204,959,120,50,652.16,25,464.985,345.11,150,2000,330,250,84.75,10,194,350,500,385,120,226.666666666667,20,120]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Status<\/th>\n      <th>Year<\/th>\n      <th>avg_cost<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":3},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>

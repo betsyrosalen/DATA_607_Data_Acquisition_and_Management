@@ -50,30 +50,16 @@ tail(raffle)
 
 This data is so messy it's hard to see what's going on, but it looks like columns V3, V5, V7, and V8 do not contain any data at all.  Columns V3, V5, and V7 are all NA's and column V8 only has the word 'Year' in one observation and the rest look like empty strings. But just to be sure I will use dplyr to look for unique values in each of those columns.
 
-```{r eval=FALSE, include=FALSE}
+```{r}
 columns <- paste('V',c(3,5,7,8), sep="")
 columns
-lapply(columns, function(x){
-  raffle %>%
-    group_by(x) %>%
-    summarise(val = n())
-  })
-```
+func <- function(column, df){
+   df %>%
+   group_by_(column) %>%
+   summarise(val = n())
+}
 
-
-```{r}
-raffle %>% 
-  group_by(V3) %>%
-  summarise(val = n())
-raffle %>% 
-  group_by(V5) %>%
-  summarise(val = n())
-raffle %>% 
-  group_by(V7) %>%
-  summarise(val = n())
-raffle %>% 
-  group_by(V8) %>%
-  summarise(val = n())
+unlist(lapply(columns, func, raffle))
 ```
 
 The results above confirm that those four columns do not contain any data.  The word year is the only value entered in the V8 column but that really belongs in the header and there's nothing else in that column so I can remove it along with the other 3 columns...
