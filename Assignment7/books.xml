@@ -10,7 +10,7 @@
 		<ISBN-13>978-1631594243</ISBN-13>
 		<pages>296</pages>
 		<binding>Flexibound</binding>
-		<amazonURL><a href="http://a.co/0KWAXs7">http://a.co/0KWAXs7</amazonURL>
+		<amazonURL>http://a.co/0KWAXs7</amazonURL>
 	</book>
 
 	<book>
@@ -19,7 +19,7 @@
 		<ISBN-13>978-0892362127</ISBN-13>
 		<pages>424</pages>
 		<binding>Hardcover</binding>
-		<amazonURL><a href="http://a.co/dSN7nG6">http://a.co/dSN7nG6</a></amazonURL>
+		<amazonURL>http://a.co/dSN7nG6</amazonURL>
 	</book>
 	
 	<book>
@@ -28,7 +28,7 @@
 		<ISBN-13>978-0500289556</ISBN-13>
 		<pages>304</pages>
 		<binding>Paperback</binding>
-		<amazonURL><a href="http://a.co/esWdAA8">http://a.co/esWdAA8</amazonURL>
+		<amazonURL>http://a.co/esWdAA8</amazonURL>
 	</book>
 
 	<book>
@@ -38,7 +38,7 @@
 		<ISBN-13>978-0500285534</ISBN-13>
 		<pages>176</pages>
 		<binding>Paperback</binding>
-		<amazonURL><a href="http://a.co/0O6t7t9">http://a.co/0O6t7t9</a></amazonURL>
+		<amazonURL>http://a.co/0O6t7t9</amazonURL>
 	</book>
 	
 </favbooks>

@@ -1,0 +1,34 @@
+{"favbooks" :[
+	{
+	"title" : "The Design of Dissent, Expanded Edition: Greed, Nationalism, Alternative Facts, and the Resistance",
+	"author" : ["Milton Glaser", "Mirko Ilic", "Steven Heller", "Tony Kushner"],
+	"ISBN-13" : "978-1631594243",
+	"pages" : 296,
+	"binding" : "Flexibound",
+	"amazonURL" : "http://a.co/0KWAXs7"
+	},
+	{
+	"title" : "Mira calligraphiae monumenta: A Sixteenth-century Calligraphic Manuscript inscribed by Georg Bocskay and Illuminated by Joris Hoefnagel",
+	"author" : ["Lee Hendrix", "Thea Vignau-Wilberg"],
+	"ISBN-13" : "978-0892362127",
+	"pages" : 424,
+	"binding" : "Hardcover",
+	"amazonURL" : "http://a.co/dSN7nG6"
+	},
+	{
+	"title" : "Breaking the Maya Code",
+	"author" : "Michael D. Coe",
+	"ISBN-13" : "978-0500289556",
+	"pages" : 304,
+	"binding" : "Paperback",
+	"amazonURL" : "http://a.co/esWdAA8"
+	},
+	{
+	"title" : "Reading the Maya Glyphs",
+	"author" : ["Michael D. Coe", "Mark Van Stone"],
+	"ISBN-13" : "978-0500285534",
+	"pages" : 176,
+	"binding" : "Paperback",
+	"amazonURL" : "http://a.co/0O6t7t9"
+	}]
+}

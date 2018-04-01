@@ -1,0 +1,59 @@
+
+p {
+     font-family: "Futura", "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+
+ul {list-style-type:disc;}
+ol {list-style-type: decimal;}
+
+ul li { 
+	margin: 0.5em 0em 1.0em 1.5em;
+	line-height: 110%;
+}
+
+ol li { 
+	margin: 0.5em 0em 1.0em 1.5em;
+	line-height: 110%;
+}
+
+hr {
+    border: 1px solid #357FAA;
+}
+
+h1 {
+    line-height: 1.8;
+}
+
+h2 {
+    line-height: 1.8;
+}
+
+h3 {
+    line-height: 1.8;
+}
+
+h4 {
+    line-height: 1.8;
+}
+
+h5 {
+    line-height: 1.8;
+}
+
+h6 {
+    line-height: 1.8;
+}
+
+.midcenter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.footer {
+    color: black; background: #E8E8E8;
+    position: fixed; top: 90%;
+    text-align:center; width:100%;
+}
