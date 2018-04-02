@@ -6,7 +6,7 @@ output:
   html_document:
     theme: cerulean
     toc: yes
-    css: ./lab.css
+    #css: ./reports.css
 editor_options: 
   chunk_output_type: inline
 ---
@@ -31,14 +31,20 @@ Your deliverable is the three source files and the R code. If you can, package y
 ### Read data from CSV file
 
 ```{r}
-booksHTML <- read_html("books.html")
+htmlURL <- "https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Assignment7/books.html"
+booksHTML <- read_html(htmlURL)
+booksHTML
 ```
 
 
 ```{r}
-booksXML <- read_xml("books.xml")
+xmlURL <- "https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Assignment7/books.xml"
+booksXML <- read_xml(xmlURL)
+booksXML
 ```
 
 ```{r}
-booksJSON <- fromJSON("books.json")
+jsonURL <- "https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/master/Assignment7/books.json"
+booksJSON <- fromJSON(jsonURL)
+booksJSON
 ```
