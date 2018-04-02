@@ -11,14 +11,6 @@ editor_options:
   chunk_output_type: inline
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(XML)
-library(RCurl)
-library(jsonlite)
-library(DT)
-```
-
 ### Assignment – Working with XML and JSON in R
 
 Pick three of your favorite books on one of your favorite subjects. At least one of the books should have more than one author. For each book, include the title, authors, and two or three other attributes that you find interesting.
@@ -29,6 +21,15 @@ Write R code, using your packages of choice, to load the information from each o
 
 Your deliverable is the three source files and the R code. If you can, package your assignment solution up into an .Rmd file and publish to rpubs.com. [This will also require finding a way to make your three text files accessible from the web].
 
+### Load Packages
+
+```{r setup, message=FALSE, warning=FALSE}
+library(XML)
+library(RCurl)
+library(jsonlite)
+library(DT)
+```
+
 ### Read data from HTML file
 
 ```{r}
@@ -37,6 +38,7 @@ htmlContent <- getURLContent(htmlURL)
 booksHTML <- readHTMLTable(htmlContent)
 booksHTML <- booksHTML[[1]]
 datatable(booksHTML)
+str(booksHTML)
 ```
 
 ### Read data from XML file
@@ -47,6 +49,7 @@ xmlContent <- getURLContent(xmlURL)
 booksXMLparsed <- xmlParse(xmlContent)
 booksXML <- xmlToDataFrame(booksXMLparsed)
 datatable(booksXML)
+str(booksXML)
 ```
 
 
@@ -57,4 +60,9 @@ jsonURL <- "https://raw.githubusercontent.com/betsyrosalen/DATA_607_Data_Acquisi
 booksJSON <- fromJSON(jsonURL)
 booksJSON <- booksJSON[[1]]
 datatable(booksJSON)
+str(booksJSON)
 ```
+
+### Conclusion
+
+The XML and HTML data frames are identical.  All variables in the data frame are factors with the same number of levels.  The JSON file however created a data frame with variables of more logical datatypes based on the type of data in each one.  `Title`, `ISBN-13`, `binding` and `amazonURL` are character vectors while `pages` is an integer vector and `author` is a list of 4 character vectors.
