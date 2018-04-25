@@ -1,0 +1,149 @@
+---
+title: "CUNY SPS DATA 607 Assignment 9"
+author: "Betsy Rosalen"
+date: "April 15, 2018"
+output:
+  html_document:
+    theme: cerulean
+    highlight: null
+    toc: yes
+    css: ./reports.css
+editor_options: 
+  chunk_output_type: inline
+---
+
+## Assignment – Web APIs
+
+The New York Times web site provides a rich set of APIs, as described here: <http://developer.nytimes.com/docs>
+
+You’ll need to start by signing up for an API key.
+
+Your task is to choose one of the New York Times APIs, construct an interface in R to read in the JSON data, and transform it to an R dataframe.
+
+## Load Packages
+
+```{r setup, message=FALSE, warning=FALSE}
+library(jsonlite)
+library(tidyverse)
+library(DT)
+```
+
+## Setting NY Times API key as an evironment variable
+
+I set my NY Times API key as an environment variable in order to hide it from my final report.  If you want to replicate my data by running the code yourself, you will have to set your key by running the following in the console and replacing the text with your API key...
+
+```
+Sys.setenv(nytkey="Your_key_goes_here")
+```
+
+```{r message=FALSE, warning=FALSE, eval=FALSE, include=FALSE}
+
+# Thanks to Justin Herman for posting this code on Slack
+# Although I ultimately didn't use it, I wanted to save the code here for possible future use...
+library(miniUI)
+library(shiny)
+
+get_password <- function() {
+ ui <- miniPage(
+   gadgetTitleBar("Please enter your NY Times API key"),
+   miniContentPanel(
+     passwordInput("password", "")
+   )
+ )
+
+ server <- function(input, output) {
+   observeEvent(input$done, {
+     stopApp(input$password)
+   })
+   observeEvent(input$cancel, {
+     stopApp(stop("No password.", call. = FALSE))
+   })
+ }
+
+ runGadget(ui, server, viewer = dialogViewer("Password", height = 200))
+}
+
+apiKey <- get_password()
+```
+
+## Request data from NY Times Archive API
+
+I thought it would be fun to look at what was happening 100 years before I was born so I chose to select only articles published in April 1872.  I will filter that down to only the date of my birth later since the NY Times Archive API only allows you to narrow down to one month at a time.
+
+Again, if you want to replicate my data, you will have to remove the `eval=FALSE` argument from the code chunk below.  I didn't want to keep requesting the data repeatedly every time I knit the document, so after it had successfully run I added the `eval=FALSE` argument to keep it from running again and saved the data to a .RData file so it can be loaded from there going forward.  Since I am looking at archived data from April 1872, I don't expect it to change.
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+url <- "https://api.nytimes.com/svc/archive/v1/1872/4.json"
+NYTKey <- Sys.getenv("nytkey")
+query <- paste0(url,"?api-key=",NYTKey)
+content <- fromJSON(query)
+save(content, file = "NYTArchive-1872-04.RData")
+```
+
+## Examine the raw data
+
+First I tried using just the `str` function in order to see what's there but the raw data comes in nested lists with lists of data frames and there's so many levels within the structure that it was hard to make sense of it.  I could see that the majority of interesting data is in the `content$response$docs` variable so I used the `str` function on the `head` function on `content$response$docs` to get a list of variables to start selecting from and narrowing down.
+
+```{r}
+load("NYTArchive-1872-04.RData")
+str(head(content$response$docs))
+```
+
+## Select columns of interest
+
+Many of the variables within `content$response$docs` did not really have any data or had very little data so I selected only the following columns to work with: `snippet, lead_paragraph, abstract, print_page, source, headline, keywords, pub_date, type_of_material, word_count`.  
+
+```{r}
+df <- content$response$docs %>% 
+  select(headline, snippet, lead_paragraph, abstract, print_page, 
+         keywords, pub_date, type_of_material, word_count) 
+
+# 'headline' was a list of two variables 'main' and 'kicker' 
+# so I just converted it to contain the main headline
+df$headline <- df$headline$main
+
+df$pub_date <- substr(df$pub_date, 1, 10)
+```
+
+## Filter for articles on my birthday!
+
+I narrowed the data down even more to only include the articles published on my birthday.
+
+```{r}
+birthday <- df %>% 
+  filter(grepl("1872-04-19",pub_date))
+```
+
+```{r}
+datatable(birthday)
+```
+
+## EDA
+
+```{r}
+table(birthday$type_of_material)
+```
+
+### Front Page Headlines
+
+```{r}
+frontpage <- filter(birthday, grepl('Front Page', type_of_material))
+frontpage$headline
+```
+
+### Other Article Headlines
+
+```{r}
+articles <- filter(birthday, grepl('Article', type_of_material))
+articles$headline
+```
+
+### Check out the article about 'Cooper Institute'
+
+I was curious to see if there was any more details about this article since Cooper Union is my alma mater but unfortunately there is no snippet or first paragraph text.
+
+```{r}
+filter(articles, grepl("Cooper", headline))
+```
+
+
