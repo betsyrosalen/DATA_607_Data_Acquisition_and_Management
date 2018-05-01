@@ -30,8 +30,8 @@ library(DT)
 
 - What is data visualization?
 - Why do we need it?
-- History of data disualization
-- What makes a good visuaization?
+- History of data visualization
+- What makes a good visualization?
 
 # Data Visualization
 
@@ -39,19 +39,52 @@ library(DT)
 
 ## **What this presentation is NOT about**  
 
-- How to make/code data visualizations
+- ggplot2
+- coding
 
 
 # What is data visualization?
 
 ## Anything that visually communicates any amount of data
 
+<table align="center">
+<tr>
+<td rowspan = 2>
 - charts
 - graphs
 - maps 
 - diagrams
-- emojis!
+</td>
+<td>
+![Chart](./images/chart.PNG)
+</td>
+<td>
+![Graph](./images/graph.PNG)
+</td>
+</tr>
 
+<tr>
+<td>
+![Map](images/map.PNG)
+</td>
+<td>
+![Diagram](./images/diagram.PNG)
+</td>
+</tr>
+</table>
+
+# What is data visualization?
+
+<table align="center">
+<tr>
+<td>
+- emojis!
+</td>
+<td>
+![Emoji](./images/emoji.jpg)
+</td>
+</tr>
+</table>
 
 # Why do we need data visualization?
 
@@ -63,6 +96,6 @@ library(DT)
 
 
 
-# What makes a good visuaization?
+# What makes a good visualization?
 
 
