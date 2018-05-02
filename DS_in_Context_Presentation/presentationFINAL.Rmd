@@ -14,13 +14,6 @@ editor_options:
 knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
 ```
 
-```{r setup, include=FALSE}
-#library(knitr)
-library(tidyverse)
-library(DT)
-#library(kableExtra)
-#library(likert)
-```
 
 # Data Visualization
 
@@ -92,33 +85,33 @@ Main Source: [Good Charts: The HBR Guide to Making Smarter, More Persuasive Data
 Lascaux Cave Paintings, France - Estimated to be up to 20,000 years old
     
 <table>
-  <tr>
-    <td>
-    ![Lascaux](./images/Lascaux1.jpeg)
-    </td>
-    <td>
-    ![Lascaux](./images/Lascaux2.jpeg)
-    </td>
-    <td>
-    ![Lascaux](./images/Lascaux3.jpeg)
-    </td>
-  </tr>
+<tr>
+<td>
+![Lascaux](./images/Lascaux1.jpeg)
+</td>
+<td>
+![Lascaux](./images/Lascaux2.jpeg)
+</td>
+<td>
+![Lascaux](./images/Lascaux3.jpeg)
+</td>
+</tr>
 </table>
 
 Nazca Lines, Peru - Created between 500 BC and 500 AD
 
 <table>
-  <tr>
-    <td>
-    ![Nasca Spider](./images/nazca_spider.jpeg)
-    </td>
-    <td>
-    ![Nasca Bird](./images/nazca_bird.jpeg)
-    </td>
-    <td>
-    ![Nasca Monkey](./images/nazca_monkey.jpeg)
-    </td>
-  </tr>
+<tr>
+<td>
+![Nasca Spider](./images/nazca_spider.jpeg)
+</td>
+<td>
+![Nasca Bird](./images/nazca_bird.jpeg)
+</td>
+<td>
+![Nasca Monkey](./images/nazca_monkey.jpeg)
+</td>
+</tr>
 </table>
 
 # History of data visualization
@@ -132,14 +125,14 @@ Credited with inventing line graphs, bar charts, pie charts, and circle graphs
 Line graphs and bar charts first published in 1786 in ***The Commercial and Political Atlas***, pie charts came later
 
 <table>
-  <tr>
-    <td width=50%>
-    ![](./images/playfair1.png)
-    </td>
-    <td width=50%>
-    ![](./images/playfair2.jpeg)
-    </td>
-  </tr>
+<tr>
+<td width=50%>
+![](./images/playfair1.png)
+</td>
+<td width=50%>
+![](./images/playfair2.jpeg)
+</td>
+</tr>
 </table>
 
 # History of data visualization
@@ -153,11 +146,11 @@ Line graphs and bar charts first published in 1786 in ***The Commercial and Poli
 Resulted in improved hospital sanitation
 
 <table>
-  <tr>
-    <td>
-    ![](./images/nightingale1.jpeg)
-    </td>
-  </tr>
+<tr>
+<td>
+![](./images/nightingale1.jpeg)
+</td>
+</tr>
 </table>
 
 # History of data visualization
@@ -171,11 +164,11 @@ Resulted in improved hospital sanitation
 Brown bar steadily diminishes in size as it approaches "Moscou"
 
 <table>
-  <tr>
-    <td>
-    ![](./images/minard1.gif)
-    </td>
-  </tr>
+<tr>
+<td>
+![](./images/minard1.gif)
+</td>
+</tr>
 </table>
 
 # History of data visualization
@@ -193,11 +186,11 @@ Recommends some chart types that are still popular today: small multiples, bump 
 Possibly the first to question the efficacy of pie charts
 
 <table>
-  <tr>
-    <td>
-    ![](./images/brinton1.png)
-    </td>
-  </tr>
+<tr>
+<td>
+![](./images/brinton1.png)
+</td>
+</tr>
 </table>
 
 # History of data visualization
@@ -243,10 +236,10 @@ Coined the term "chartjunk"
 
 Quotes:
 
-- “Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space.” ― *The Visual Display of Quantitative Information*
-- “Above all else show the data.” ― *The Visual Display of Quantitative Information*
-- “Clutter and confusion are failures of design, not attributes of information.” 
-- "Today’s graphics use multiple shapes and colors to cover up a paucity of data."
+- "Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space." - *The Visual Display of Quantitative Information*
+- "Above all else show the data." - *The Visual Display of Quantitative Information*
+- "Clutter and confusion are failures of design, not attributes of information." 
+- "Today's graphics use multiple shapes and colors to cover up a paucity of data."
 - "There is no such thing as information overload. There is only bad design."
 
 # History of data visualization
@@ -274,14 +267,14 @@ Tried to quantify graphic perception, but relied on mostly static black and whit
 Uses attractiveness and aesthetics to catch the eye, evoke an emotional response, and communicate to a mainstream audience
 
 <table>
-  <tr>
-    <td width=60%>
-    ![](./images/holmes1.jpg)
-    </td>
-    <td width=40%>
-    ![](./images/holmes2.gif)
-    </td>
-  </tr>
+<tr>
+<td width=60%>
+![](./images/holmes1.jpg)
+</td>
+<td width=40%>
+![](./images/holmes2.gif)
+</td>
+</tr>
 </table>
 
 # History of data visualization
@@ -325,8 +318,8 @@ Modern research is finding that some of the old rules and maxims don't hold up i
 ### Can you tell what the first picture is about?
 
 <table>
-  <tr>
-    <td width=40%>
+<tr>
+<td width=40%>
 ![](./images/baddv.png)
 </td>
 <td width=60%>
