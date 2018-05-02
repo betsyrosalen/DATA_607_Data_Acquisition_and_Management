@@ -2,10 +2,12 @@
 body {background-color: #ffffff;}
 
 p { font-family: "Trebuchet MS", "Gill Sans", Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     padding-left: 10px;}
 	
-img { padding: 15px 25px 15px 25px;}
+img { 	padding: 15px 25px 15px 25px;
+		max-width: 75%;
+		min-width: 25%}
 
 a:link {	color: #0086b3;}
 a:visited {	color: #e29900;}
@@ -38,15 +40,15 @@ h1, h2, h3 {color: #0086b3;
 h4, h5, h6 {color: #24748f;
 			font-weight: medium;}
 	
-h1 {font-size: 26px;
+h1 {font-size: 30px;
 	background: #c2e4f0;}
-h2 {font-size: 24px;
+h2 {font-size: 28px;
 	background: #d6edf5;}
-h3 {font-size: 20px;
+h3 {font-size: 24px;
 	background: #eaf6fa;}
-h4 {font-size: 18px;}
-h5 {font-size: 16px;}
-h6 {font-size: 14px;}
+h4 {font-size: 22px;}
+h5 {font-size: 20px;}
+h6 {font-size: 18px;}
 
 .midcenter {
     position: fixed;
