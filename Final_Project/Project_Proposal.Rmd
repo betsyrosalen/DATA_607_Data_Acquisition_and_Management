@@ -1,0 +1,44 @@
+---
+title: "CUNY SPS DATA 607 Final Project Proposal"
+author: "Betsy Rosalen"
+date: "5/2/2018"
+output:
+  html_document:
+    theme: cerulean
+    toc: yes
+    css: ./reports.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## CUNY BCC Student Challenges
+
+I have two ideas both of which I hope will help me and my coleagues gain a better understanding of the unique challenges that the students face at CUNY Bronx Community College (the school where I work).  
+
+### Idea One
+
+I recently attended a faculty day talk on food security issues for BCC students and would like to do a comparison of the food security issues at BCC vs. other demographic groups or national averages.  
+
+The presenter at the food security talk invited us to work with her on her research and contact her for access to the data, so I don't think that it will be a problem to get the BCC data. 
+
+National food security data is available here: 
+
+<https://www.ers.usda.gov/data-products/food-security-in-the-united-states/documentation/>
+
+<https://thedataweb.rm.census.gov/ftp/cps_ftp.html#cpssupps>
+
+### Idea Two
+
+The second idea is to do a comparison of BCC retention and graduation rates as compared with national averages.  I believe I can get BCC data from the BCC Office of Institutional Research.  I can also get some yearly totals data here:  <https://catalog.data.gov/dataset/city-university-of-new-york-cuny-university-retention-and-graduation-rates-beginning-1990>.  
+
+National data for graduation and retention rates is available here: <https://usedgov.github.io/api/mbk.html> 
+
+Although it looks like the same data is also available as a csv file here:  <https://www2.ed.gov/rschstat/statistics/surveys/mbk/index.html>
+
+More data here: <https://collegescorecard.ed.gov/data/documentation/>
+
+### Challenge
+
+The biggest challenge I am having is acquiring data from different types of data sources.  I am most interested in the food security issue, but everything I am finding seems to be in csv or similar format.  The graduation and retention rates I am pretty confident would not be new information, I am sure the school has probably already done this, so I'm less interested in pursuing that idea.

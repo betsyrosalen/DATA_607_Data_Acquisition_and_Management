@@ -23,7 +23,6 @@ knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
 - History of data visualization
 - Why do we need it?
 - What makes a good visualization?
-- Visual thinking
 
 <br>
 
@@ -262,16 +261,14 @@ Tried to quantify graphic perception, but relied on mostly static black and whit
 
 ### Nigel Holmes (1942-) created graphics for mass media at Time Magazine
 
-*Pretty* infographics 
-
-Uses attractiveness and aesthetics to catch the eye, evoke an emotional response, and communicate to a mainstream audience
+*Pretty* infographics - Uses attractiveness and aesthetics to catch the eye, evoke an emotional response, and communicate to a mainstream audience
 
 <table>
 <tr>
-<td width=60%>
+<td width=50%>
 ![](./images/holmes1.jpg)
 </td>
-<td width=40%>
+<td width=50%>
 ![](./images/holmes2.gif)
 </td>
 </tr>
@@ -308,7 +305,7 @@ Modern research is finding that some of the old rules and maxims don't hold up i
 
 ### Anscombe's quartet
 
-![](./images/datasaurus.jpg)
+![](./images/datasaurus2.gif)
 
 
 # Why do we need data visualization?
