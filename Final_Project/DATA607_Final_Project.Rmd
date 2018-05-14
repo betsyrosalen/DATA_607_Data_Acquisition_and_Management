@@ -1,0 +1,133 @@
+---
+title: "Food Security at BCC"
+subtitle: "CUNY SPS DATA 607 Final Project"
+author: "Betsy Rosalen"
+date: "5/13/2018"
+output:
+  html_document:
+    theme: cerulean
+    css: ./reports.css
+    code_folding: hide
+    df_print: paged
+    toc: true
+    toc_float:
+     collapsed: false
+     smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Project Description
+
+I recently attended a faculty day talk by Dr. Tanzina Ahmed on food security concerns facing the students at Bronx Community College where she shared her work with her research partner Dr. Rositsa Ilieva of The New School. I would like to do my own analysis of her dataset and a comparison of the food security issues at BCC vs. other demographic groups or national averages.  I hope this analysis will help me and my coleagues gain a better understanding of the unique challenges that the students at CUNY Bronx Community College face.  
+
+## Data Collection
+
+I contacted Dr. Ahmed and she generously agreed to share a portion of her data with me to use in my project.  It was emailed to me in the form of a SPSS (.sav) file that represents the first 100 cases in her dataset.  She requested that I cite her work as the source of the data and not share the data.  See the citations at the end of the report.
+
+National food security data was downloaded from the usda.gov website here: 
+
+<https://www.ers.usda.gov/data-products/food-security-in-the-united-states/documentation/>
+
+<https://thedataweb.rm.census.gov/ftp/cps_ftp.html#cpssupps>
+
+If you would like to reproduce my analysis please contact me so I can get permission to share access to the data provided by Drs. Ahmed and Ilieva.  The census data can be downloaded from the links provided above or directly from this link <http://thedataweb.rm.census.gov/pub/cps/supps/dec16pub.zip>.  You will need to unzip the file after downloading.  
+
+```{r message=FALSE, warning=FALSE}
+# Use the haven package to load the SPSS .sav file
+library(haven)
+bcc_data <- read_spss(file.path("~","GitHub","DATA_607_Data_Acquisition_and_Management","Final_Project","FoodAccessStudy_Variables_100participants.sav"))
+```
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# Load .dat Census file
+# Can't really get this to work.  It loads as 150,000+ records of one variable.  There's not header to tell what the data means, so I am switching to try a new approach using the Census API's
+census_data <- read.delim("/Users/Betsy/OneDrive/CUNY SPS MDS/DATA 607 - Aquisition and Management/Final Project/dec16pub.dat", encoding = "ASCII")
+```
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# Load .dat Census file
+# Can't get this to work either... 
+library(readr)
+census_data <- read_tsv("/Users/Betsy/OneDrive/CUNY SPS MDS/DATA 607 - Aquisition and Management/Final Project/dec16pub.dat", col_names=FALSE)
+```
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# Load .dat Census file
+# Can't get this to work either... 
+library(data.table)
+census_data <- fread("/Users/Betsy/OneDrive/CUNY SPS MDS/DATA 607 - Aquisition and Management/Final Project/dec16pub.dat", sep=" ")
+```
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# Load .dat Census file
+# Tried saving as a csv file and then using edit replace to replace all spaces with commas, but that didn't work either... 
+# It imported nicely, but unfortunately the data didn't line up correctly and data points wound up in wrong columns
+census_data <- read.csv("/Users/Betsy/OneDrive/CUNY SPS MDS/DATA 607 - Aquisition and Management/Final Project/dec16pubcopy.csv", header=FALSE)
+```
+
+#### Census API key 
+
+##### Setting Census API key as an evironment variable
+
+I set my Census API key as an environment variable in order to hide it from my final report.  If you want to replicate my data by running the code yourself, you will have to get a Census API key here: <https://api.census.gov/data/key_signup.html> then set your key by running the following in the console and replacing the text with your API key...
+
+```
+Sys.setenv(CENSUS_KEY="Your_key_goes_here")
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# This is just a test to make sure the API is working, but I can't find the correct API name and variable names for the food security data that I need.
+library(censusapi)
+census_data <- getCensus(name = "timeseries/healthins/sahie",
+	vars = c("NAME", "IPRCAT", "IPR_DESC", "PCTUI_PT"), 
+	region = "state:1", time = 2015)
+```
+
+Apparently I don't think the Food Supplement Data is available via the API...
+
+
+### EDA
+
+```{r}
+head(bcc_data)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Citations
+
+> ###### Ilieva, R. T., Ahmed, T., & Yan, A. (In press). <br>
+> Hungry minds: Investigating the food insecurity of minority community college students. <br>
+> *Journal of Public Affairs.*
+
+> ###### Ahmed, T. & Ilieva, R. T. (2018, June). <br>
+> *“Nothing to Eat”: How Community Colleges Shape Students’ Food Security.*<br>
+> Talk presented at the Society for the Psychological Study of Social Issues Conference: Pittsburgh, PA.
+
+> ###### Ahmed, T., & Ilieva, R. T. (2018, April). <br>
+> *“Shouldn’t There Be a Discount?” How Minority Students Access Food in Community College.*<br>
+> Talk presented at the Diversity in Research and Practice Conference at Teachers College, Columbia University: New York: NY.
+
+> ###### Ilieva, R. T., Ahmed, T., Yan, A., & Bhaskaran, S. (2018, April).<br>
+> *Assessing Fresh Food Access at a Community College: A Socio-Spatial Approach.*<br>
+> Talk presented at the Meeting of the American Association of Geographers: New Orleans, LA.
+
+> ###### Ilieva, R. T., Ahmed, T., Yan, A., & Bhaskaran, S. (2018, March). <br>
+> *Rethinking the Urban Foodscape: Lessons from a Community College in New York City.*<br>
+> Recorded video presented at the International Conference of Architecture, Media, Politics & Society: Abu Dhabi, UAE.
+
+> <https://www.computerworld.com/article/3120415/data-analytics/how-to-download-new-census-data-with-r.html>
