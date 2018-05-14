@@ -1,0 +1,2951 @@
+DataFerrett Codebook - Created 
+
+
+Dataset: CPS//Food Security/Dec 2016
+Topic: Food Security Supplement Variables
+HHSUPWGT
+Weight - household weight for supplement household
+
+
+
+
+Topic: Food Security Supplement Variables
+PWSUPWGT
+Weight - person weight for supplement household
+
+
+
+
+Topic: Food Security Supplement Variables
+HES1A
+Expend - shopped at supermarket/grocery store last week
+
+With the following Ranges:
+-9  No response
+-3  Refuse
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HES1B
+Expend - shopped at warehouse clubs/produce stands, etc.
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HES1C
+Expend - bought food at restaurant/cafeteria/etc. last week
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HES1D
+Expend - bought food from any other kind of place last week
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HETS2O
+Expend - total amount spent at supermarket/grocery store
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HETS3O
+Expend - amount for nonfood at supermarket/grocery store
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+0:999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HETS4O
+Expend - total amount spent at warehouse, clubs, etc.
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HETS5O
+Expend - amount for nonfood at warehouse, clubs, etc.
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+0:999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HETS6O
+Expend - total amount spent for food away from home
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HETS7O
+Expend - total amount spent for food anywhere else
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HETS8O
+Expend - total amount spent for food last week
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+0:9999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HETS8OU
+Expend - USUAL amount spent for food per week
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+0:999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HES8B
+Expend/need a - need to spend more or could spend less
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  More
+2  Less
+3  Same
+
+
+
+Topic: Food Security Supplement Variables
+HETS8CO
+Expend/need c - amount more would need to spend
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HETS8DO
+Expend/need d - amount less could spend
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:999  Dollars
+
+
+
+Topic: Food Security Supplement Variables
+HES9
+Screen-ran short of money in past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP1
+Program - SNAP received in past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP21
+Program - SNAP received in January
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP22
+Program - SNAP received in February
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP23
+Program - SNAP received in March
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP24
+Program - SNAP received in April
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP25
+Program - SNAP received in May
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP26
+Program - SNAP received in June
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP27
+Program - SNAP received in July
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP28
+Program - SNAP received in August
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP29
+Program - SNAP received in September
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP210
+Program - SNAP received in October
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP211
+Program - SNAP received in November
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP212
+Program - SNAP received in December
+
+With the following Ranges:
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HETSP2D
+Program - date SNAP last received
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Thirty-one days or more prior to interview.
+2  Within 30 days of interview.
+
+
+
+Topic: Food Security Supplement Variables
+HETSP3O
+Program - amount of SNAP benefit received
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:999  Dollar Amount
+
+
+
+Topic: Food Security Supplement Variables
+HESP3OTC
+Program - topcode flag for amount of food stamps
+
+
+
+
+Topic: Food Security Supplement Variables
+HESP6
+Program - free or reduced-cost lunches at school, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP7
+Program - free or reduced-cost brakfasts at school, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP7A
+Program - free or reduced-cost food, day care or Head Start
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESP8
+Program - foods received from WIC Program, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HETSP9
+Program - number of household getting WIC foods
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:16  People in Household
+
+
+
+Topic: Food Security Supplement Variables
+HESP9TC
+Program - topcode flag for number getting WIC foods
+
+
+
+
+Topic: Food Security Supplement Variables
+HESS1
+Screen - sufficiency of food eaten in household, quantity
+
+With the following Ranges:
+-9  No response
+-3  Refuse
+-2  Don't Know
+1  Enough of the kinds of food we want to eat
+2  Enough but not always the kinds of food we want to eat
+3  Sometimes not enough to eat
+4  Often not enough to eat
+
+
+
+Topic: Food Security Supplement Variables
+HESS2
+Scale12 - worried food would run out, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Often true
+2  Sometimes true
+3  Never true
+
+
+
+Topic: Food Security Supplement Variables
+HESSM2
+Scale30 - worried food would run out, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESS3
+Scale12 - food bought didn't last, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Often true
+2  Sometimes true
+3  Never true
+
+
+
+Topic: Food Security Supplement Variables
+HESSM3
+Scale30 - food bought didn't last, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESS4
+Scale12 - couldn't afford balanced meals, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Often true
+2  Sometimes true
+3  Never true
+
+
+
+Topic: Food Security Supplement Variables
+HESSM4
+Scale30 - couldn't afford balanced meals, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESH2
+Scale12 - adult cut size or skipped meals, past 12 mont
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESHF2
+Scale12 - frequency adult cut or skipped, past 12 mon
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Almost every month
+2  Some months but not every month
+3  Only 1 or 2 months
+
+
+
+Topic: Food Security Supplement Variables
+HESHM2
+Scale30 - adult cut size or skipped meals, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESHMF2
+Scale30 - frequency adult cut or skipped, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:30  Number of days
+
+
+
+Topic: Food Security Supplement Variables
+HESH3
+Scale12 - ate less than felt they should, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESHF3
+Scale12 - frequency ate less than felt they should, past 12
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Almost every month
+2  Some months but not every month
+3  Only 1 or 2 months
+
+
+
+Topic: Food Security Supplement Variables
+HESHM3
+Scale30 - ate less than felt they should, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESHMF3
+Scale30 - frequency ate less than felt they should, past 30
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:30  Number of days
+
+
+
+Topic: Food Security Supplement Variables
+HESH4
+Scale 12 - respondent hungry but didn't eat, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESHF4
+Scale 12 - frequency respondent hungry, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Almost every month
+2  Some months but not every month
+3  Only 1 or 2 months
+
+
+
+Topic: Food Security Supplement Variables
+HESHM4
+Scale30 - respondent hungry but didn't eat, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESHMF4
+Scale30 - frequency respondent hungry but didn't eat, past 3
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:30  Number of days
+
+
+
+Topic: Food Security Supplement Variables
+HESH5
+Scale12 - respondent lost weight, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESHM5
+Scale30 - respondent lost weight, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSH1
+Scale12 - adult not eat whole day, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSHF1
+Scale12 - frequency adult not eat whole day, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Almost every month
+2  Some months but not every month
+3  Only 1 or 2 months
+
+
+
+Topic: Food Security Supplement Variables
+HESSHM1
+Scale30 - adult not eat whole day, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSHMF1
+Scale30 - frequency adult not eat whole day, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:30  Number of days
+
+
+
+Topic: Food Security Supplement Variables
+HESS5
+Scale12 - child fed few kinds of low-cost foods, past 12 mon
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Often true
+2  Sometimes true
+3  Never true
+
+
+
+Topic: Food Security Supplement Variables
+HESSM5
+Scale30 - child fed few kinds of low-cost foods, past 30 day
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESS6
+Scale12 - couldn't feed child balanced meals, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Often true
+2  Sometimes true
+3  Never true
+
+
+
+Topic: Food Security Supplement Variables
+HESSM6
+Scale30 - couldn't feed child balanced meals, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESH1
+Scale12 - child not eating enough, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Often true
+2  Sometimes true
+3  Never true
+
+
+
+Topic: Food Security Supplement Variables
+HESHM1
+Scale30 - child not eating enough, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSH2
+Scale12 - cut size of child's meals, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSHF2
+Scale12 - frequency cut size of child's meals, past 12 month
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Almost every month
+2  Some months but not every month
+3  Only 1 or 2 months
+
+
+
+Topic: Food Security Supplement Variables
+HESSHM2
+Scale30 - cut size of child's meals, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSHMF2
+Scale30 - frequency cut size of child's meals, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:30  Days
+
+
+
+Topic: Food Security Supplement Variables
+HESSH3
+Scale12 - child hungry - past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSHF3
+Scale12 - frequency child hungry - past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Almost every month
+2  Some months but not every month
+3  Only 1 or 2 months
+
+
+
+Topic: Food Security Supplement Variables
+HESSHM3
+Scale30 - child hungry, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSHMF3
+Scale30 - frequency child hungry, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:30  Number of days
+
+
+
+Topic: Food Security Supplement Variables
+HESSH4
+Scale12 - child skipped meal, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSHF4
+Scale12 - frequency child skipped meal, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Almost every month
+2  Some months but not every month
+3  Only 1 or 2 months
+
+
+
+Topic: Food Security Supplement Variables
+HESSHM4
+Scale30 - child skipped meal, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSHMF4
+Scale30 - frequency child skipped meal, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1:30  Days
+
+
+
+Topic: Food Security Supplement Variables
+HESSH5
+Scale12 - child didn't eat whole day, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESSHM5
+Scale30 - child didn't eat whole day, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESC1
+meals delivered to home, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESC2
+ate meals at a community program, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESC3
+Coping - got food from food pantry, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESCF3
+Coping - frequency got food from food pantry, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Almost every month
+2  Some months but not every month
+3  Only 1 or 2 months
+
+
+
+Topic: Food Security Supplement Variables
+HESCM3
+Coping - frequency got food from food pantry, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESC3A
+Coping - could get emergency food if needed
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESC4
+Coping - ate meals at soup kitchen, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HESCF4
+Coping - frequency ate meals at soup kitchen, past 12 months
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Almost every month
+2  Some months but not every month
+3  Only 1 or 2 months
+
+
+
+Topic: Food Security Supplement Variables
+HESCM4
+Coping - ate meals at soup kitchen, past 30 days
+
+With the following Ranges:
+-9  No response
+-3  Refused
+-2  Don't Know
+1  Yes
+2  No
+
+
+
+Topic: Food Security Supplement Variables
+HRSUPINT
+SUP - supplement interview status
+
+With the following Ranges:
+1  Interview
+2  Noninterview
+
+
+
+Topic: Food Security Supplement Variables
+HRPOOR
+POOR - household income relative to 185 pct. poverty
+
+With the following Ranges:
+1  Below 185% poverty
+2  Above 185% poverty or income not reported
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12CX
+Food Sec CX - common screen indicator, 12-month scale
+
+With the following Ranges:
+-5  Missing No Valid Scale Items
+1  Household Did Not Pass Common Screen High Food Security Assumed
+2  Household Passed Common Screen Food Security Status
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12M1
+Food Sec M1 - Food Security Summary, 12 month scale
+
+With the following Ranges:
+-9  No response
+1  Food Secure High or Marginal Food Security
+2  Low Food Security
+3  Very Low Food Security
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12MD
+Food Sec M2 (MD) - Detailed food security status, 12-month
+
+With the following Ranges:
+-9  No response
+1  High Food Security
+2  Marginal Food Security
+3  Low Food Security
+4  Very Low Food Security
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12M3
+Food Sec M3 - raw score, 12-month
+
+With the following Ranges:
+-9  No response
+0  No Affirmative Responses or did not Pass Initial Screen
+1:18  Number of Affirmative Responses
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12M4
+Food Sec M4 - Rasch scale score, 12-month
+
+With the following Ranges:
+-9  No response
+-6  Raw Score = 0 No Scale Score Assigned
+1.43:13.03  Rasch scale score assigned to Households
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12MC
+Food Sec M5 (MC) - children's food security status, 12-month
+
+With the following Ranges:
+-9  No response
+1  Children Food Secure, High or Marginal Food Security among Children
+2  Low Food Security among Children
+3  Very Low Food Security among Children
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12M6
+Food Sec M6 - children's scale raw score, 12-month
+
+With the following Ranges:
+-9  No response
+0  No Affirmative Responses or did not Pass Initial Screen
+1:8  Number of affirmative Responses
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12M7
+Food Sec M7 - children's Rasch scale score, 12-month
+
+With the following Ranges:
+-9  No response
+-6  Raw Score = 0 No Scale Score Assigned
+4.11:12.25  Rasch scale score assigned to Households
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12M8
+Food Sec M8 - Adult Food Security Status, 12 month scale
+
+With the following Ranges:
+-9  No response
+1  High Food Security among Adults
+2  Marginal Food Security among Adults
+3  Low Food Security among Adults
+4  Very Low Food Security among Adults
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12M9
+Food Sec M9 - Adult food security raw score, 12-month
+
+With the following Ranges:
+-9  No response
+0  No Affirmative Responses or did not Pass Initial Screen
+1:10  Number of affirmative Responses
+
+
+
+Topic: Food Security Supplement Variables
+HRFS12ME
+Food Sec ME - Adult food security rasch scale score, 12 month
+
+With the following Ranges:
+-9  No response
+-6  Raw Score = 0 No Scale Score Assigned
+1.72:11.05  Rasch scale score assigned to Households
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30D1
+Food Sec 30D1 - Summary food security status, 30-day
+
+With the following Ranges:
+-9  No response
+1  Food Secure - High or Marginal Food Security
+2  Low Food Security
+3  Very Low Food Security
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30D2
+Food Sec 30D2 - Detailed food security status, 30-day
+
+With the following Ranges:
+-9  No response
+1  High Food Security
+2  Marginal Food Security
+3  Low Food Security
+4  Very Low Food Security
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30D3
+Food Sec 30D3 - food security raw score, 30-day
+
+With the following Ranges:
+-9  No response
+0  No Affirmative Responses or did not Pass Initial Screen
+1:18  Number of Affirmative Responses
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30D4
+Food Sec 30D4 - food security rasch scale score, 30-day
+
+With the following Ranges:
+-9  No response
+-6  Raw Score = 0 No Scale Score Assigned
+1.43:13.03  Rasch scale score assigned to Households
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30D5
+Food Sec 30D5 - children's food security status, 30-day
+
+With the following Ranges:
+-9  No response
+1  Children Food Secure High or Marginal Food Security among Children
+2  Low Food Security among Children
+3  Very Low Food Security among Children
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30D6
+Food Sec 30D6 - children's food security raw score, 30-day
+
+With the following Ranges:
+-9  No response
+0  No Affirmative Responses or did not Pass Initial Screen
+1:8  Number of affirmative Responses
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30D7
+Food Sec 30D7 - children's food security Rasch Scale, 30-day
+
+With the following Ranges:
+-9  No response
+-6  Raw Score = 0 No Scale Score Assigned
+4.11:12.25  Rasch scale score assigned to Households
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30D8
+Food Sec 30D8 - adult food security, 30-day
+
+With the following Ranges:
+-9  No response
+1  High Food Security among Adults
+2  Marginal Food Security among Adults
+3  Low Food Security among Adults
+4  Very Low Food Security among Adults
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30D9
+Food Sec 30D9 - adult food security raw score, 30-day
+
+With the following Ranges:
+-9  No response
+0  No Affirmative Responses or did not Pass Initial Screen
+1:10  Number of affirmative Responses
+
+
+
+Topic: Food Security Supplement Variables
+HRFS30DE
+Food Sec 30DE- adult food security rasch scale score, 30-day
+
+With the following Ranges:
+-6  Raw Score = 0 No Scale Assigned
+1.72:11.05  Rasch scale score assigned to Households.
+
+
+
+Topic: Household Variables
+HUFINAL
+Household-final code,status of interview
+
+With the following Ranges:
+0  New Interview - In Contacted
+1  Fully Complete Interview
+2  Partial Interview
+4  Partial, Not Complete At Closeout
+5  Cati - Lf Complete; Sup Incomplete
+8  Hh Deceased
+17  Hh Moved Since Last Contact
+18  Hh Absent, Ill, Hospitalized
+19  Hh Institutionalized
+21  Unconvertible Language Barrier
+22  Unpublished # Or Not Listing For Hh
+23  Only # Incorrect/Problem Dialing #
+24  Hh Entirely Occupied By Af
+25  Hh With All Member Ure
+26  Hh Vacant (recycled To Field)
+29  Other Non-Interview
+30  Hostile Break:int Progress
+31  Refusal:no Int Progress
+32  Hostile Break:request Pv
+33  Refusal: Request Pv
+40  Callback Needed:int Progress
+41  Callbk needed;no Int Progress
+42  Hh Absent
+43  Hh Ill, Hospitalized
+44  Hh Institutionalized
+47  Language Barrier
+49  Answering Service Machine For Hh
+50  New # From Da Or Recording
+53  Da Unable To Confirm Hh #
+54  Da Confirmed Hh#
+55  # Not In Service
+56  # Changed.  No New # Given
+57  Hh Unknown At Correctly Dialed #
+59  Can't Reach Da
+80  Ring No Anwser
+81  Normal Busy Or Circuits Busy
+82  Fast Or Wats/Fts Busy
+83  # Could Not Be Completed As Dialed
+84  No Signal, Funny Signal
+85  Bad Connection
+86  # Temporarily Not In Service
+87  Wrong # Dialed Or Reached
+88  Possible Wrong # Hh Wouldn't Confirm
+89  Answering Machine - Unknown Status
+104  Invalid Input
+105  Personal Int. Comp. For Hh
+106  Case Deleted - Congressional
+108  Sample Reduction
+109  Hostile Breakoff
+110  Hostile Brkoff Req. PV
+111  Refusal
+112  Refusal Req. Pv
+115  Partial With Callback Planned
+116  Pre-Refusal
+118  Uncompleted Callback
+119  Temp. Unavailable Absent, Ill
+120  Temp. Institutionalized
+121  Lang. Barrier
+126  Other Supervisory Referral
+127  Never Tried
+200  New Interview-Contacted
+201  Capi Complete
+202  Callbk. Needed
+203  Sufficient Partial - Precloseout
+204  Suffic. Partial - At Closeout
+205  Labor Force Compete, Suppl. Incomplete
+210  Capi Complete Reinterview
+216  No One Home
+217  Temporarily Absent
+218  Refused
+219  Other Occupied - Specify
+224  Armed Forces Occupied Or Under Age 14
+225  Temp. Occupied W/Persons With Ure
+226  Vacant Regular
+227  Vacant-Storage Of Hhld Furniture
+228  Unfit, To Be Demolished
+229  Under Construction, Not Ready
+230  Converted To Temp Business Or Storage
+231  Unoccupied Tent Or Trailer Site
+232  Permit Granted-Construction Not Start
+233  Other-Specify
+240  Demolished
+241  House Or Trailer Moved
+242  Outside Segment
+243  Converted To Perm. Business Or Storage
+244  Merged
+245  Condemned
+246  Built After April 1, 1980
+247  Unused Serial No./Listing Sheet Line
+248  Other - Specify
+256  Removed during Subsampling
+257  Unit already had a chance of selection
+
+
+
+Topic: Household Variables
+HRMONTH
+Household-month of interview
+
+With the following Ranges:
+1  January
+2  February
+3  March
+4  April
+5  May
+6  June
+7  July
+8  August
+9  September
+10  October
+11  November
+12  December
+
+
+
+Topic: Household Variables
+HRNUMHOU
+Household-total # of members
+
+With the following Ranges:
+0:16  Range
+
+
+
+Topic: Household Variables
+HEFAMINC
+Household-total family income in past 12 months
+
+With the following Ranges:
+1  Less Than $5,000
+2  5,000 To 7,499
+3  7,500 To 9,999
+4  10,000 To 12,499
+5  12,500 To 14,999
+6  15,000 To 19,999
+7  20,000 To 24,999
+8  25,000 To 29,999
+9  30,000 To 34,999
+10  35,000 To 39,999
+11  40,000 To 49,999
+12  50,000 To 59,999
+13  60,000 To 74,999
+14  75,000 To 99,999
+15  100,000 To 149,999
+16  150,000 or More
+
+
+
+Topic: Basic CPS School Enrollment Variables
+PESCHENR
+School Enrollment-in high school/college/university,y/n
+
+With the following Ranges:
+-1  Not in Universe
+1  Yes
+2  No
+
+
+
+Topic: Basic CPS School Enrollment Variables
+PESCHFT
+School Enrollment-full-time/part-time student
+
+With the following Ranges:
+-1  Not in Universe
+1  FULL-TIME
+2  PART-TIME
+
+
+
+Topic: Basic CPS School Enrollment Variables
+PESCHLVL
+School Enrollment-in high school/college/university
+
+With the following Ranges:
+-1  Not in Universe
+1  HIGH SCHOOL
+2  COLLEGE OR UNIVERSITY
+
+
+
+Topic: Basic CPS School Enrollment Variables
+PRNLFSCH
+School Enrollment-(not in labor force)school/not in school
+
+With the following Ranges:
+-1  In Universe, Met No Conditions To Assign
+1  IN SCHOOL
+2  NOT IN SCHOOL
+
+
+
+Topic: Selectable Geographies
+GEOG-101
+County
+
+Is a concatenation of the variables GESTFIPS and GTCO
+06 001 - Alameda County, California
+09 001 - Fairfield County, Connecticut
+10 001 - Kent County, Delaware
+11 001 - District of Columbia, District of Columbia
+12 001 - Alachua County, Florida
+15 001 - Hawaii County, Hawaii
+23 001 - Androscoggin County, Maine
+25 001 - Barnstable County, Massachusetts
+35 001 - Bernalillo County, New Mexico
+37 001 - Alamance County, North Carolina
+01 003 - Baldwin County, Alabama
+04 003 - Cochise County, Arizona
+10 003 - New Castle County, Delaware
+15 003 - Honolulu County, Hawaii
+24 003 - Anne Arundel County, Maryland
+27 003 - Anoka County, Minnesota
+32 003 - Clark County, Nevada
+34 003 - Bergen County, New Jersey
+42 003 - Allegheny County, Pennsylvania
+09 005 - Litchfield County, Connecticut
+10 005 - Sussex County, Delaware
+12 005 - Bay County, Florida
+22 005 - Ascension Parish, Louisiana
+23 005 - Cumberland County, Maine
+25 005 - Bristol County, Massachusetts
+26 005 - Allegan County, Michigan
+34 005 - Burlington County, New Jersey
+36 005 - Bronx County, New York
+06 007 - Butte County, California
+34 007 - Camden County, New Jersey
+42 007 - Beaver County, Pennsylvania
+45 007 - Anderson County, South Carolina
+09 009 - New Haven County, Connecticut
+12 009 - Brevard County, Florida
+25 009 - Essex County, Massachusetts
+34 009 - Cape May County, New Jersey
+47 009 - Blount County, Tennessee
+09 011 - New London County, Connecticut
+12 011 - Broward County, Florida
+23 011 - Kennebec County, Maine
+33 011 - Hillsborough County, New Hampshire
+34 011 - Cumberland County, New Jersey
+42 011 - Berks County, Pennsylvania
+04 013 - Maricopa County, Arizona
+24 013 - Carroll County, Maryland
+25 013 - Hampden County, Massachusetts
+33 013 - Merrimack County, New Hampshire
+34 013 - Essex County, New Jersey
+35 013 - Dona Ana County, New Mexico
+36 013 - Chautauqua County, New York
+42 013 - Blair County, Pennsylvania
+51 013 - Arlington County, Virginia
+08 013 - Boulder County, Colorado
+01 015 - Calhoun County, Alabama
+04 015 - Mohave County, Arizona
+09 015 - Windham County, Connecticut
+12 015 - Charlotte County, Florida
+13 015 - Bartow County, Georgia
+21 015 - Boone County, Kentucky
+24 015 - Cecil County, Maryland
+25 015 - Hampshire County, Massachusetts
+33 015 - Rockingham County, New Hampshire
+06 017 - El Dorado County, California
+24 017 - Charles County, Maryland
+25 017 - Middlesex County, Massachusetts
+33 017 - Strafford County, New Hampshire
+34 017 - Hudson County, New Jersey
+41 017 - Deschutes County, Oregon
+42 017 - Bucks County, Pennsylvania
+04 019 - Pima County, Arizona
+06 019 - Fresno County, California
+12 019 - Clay County, Florida
+18 019 - Clark County, Indiana
+22 019 - Calcasieu Parish, Louisiana
+23 019 - Penobscot County, Maine
+29 019 - Boone County, Missouri
+34 019 - Hunterdon County, New Jersey
+42 019 - Butler County, Pennsylvania
+04 021 - Pinal County, Arizona
+12 021 - Collier County, Florida
+25 021 - Norfolk County, Massachusetts
+26 021 - Berrien County, Michigan
+34 021 - Mercer County, New Jersey
+37 021 - Buncombe County, North Carolina
+42 021 - Cambria County, Pennsylvania
+25 023 - Plymouth County, Massachusetts
+34 023 - Middlesex County, New Jersey
+39 023 - Clark County, Ohio
+04 025 - Yavapai County, Arizona
+06 025 - Imperial County, California
+24 025 - Harford County, Maryland
+25 025 - Suffolk County, Massachusetts
+26 025 - Calhoun County, Michigan
+34 025 - Monmouth County, New Jersey
+39 025 - Clermont County, Ohio
+04 027 - Yuma County, Arizona
+24 027 - Howard County, Maryland
+25 027 - Worcester County, Massachusetts
+34 027 - Morris County, New Jersey
+36 027 - Dutchess County, New York
+06 029 - Kern County, California
+34 029 - Ocean County, New Jersey
+39 029 - Columbiana County, Ohio
+41 029 - Jackson County, Oregon
+42 029 - Chester County, Pennsylvania
+48 029 - Bexar County, Texas
+06 031 - Kings County, California
+08 031 - Denver County, Colorado
+24 031 - Montgomery County, Maryland
+34 031 - Passaic County, New Jersey
+40 031 - Comanche County, Oklahoma
+12 033 - Escambia County, Florida
+22 033 - East Baton Rouge Parish, Louisiana
+24 033 - Prince George's County, Maryland
+53 033 - King County, Washington
+08 035 - Douglas County, Colorado
+34 035 - Somerset County, New Jersey
+39 035 - Cuyahoga County, Ohio
+53 035 - Kitsap County, Washington
+06 037 - Los Angeles County, California
+24 037 - St. Mary's County, Maryland
+27 037 - Dakota County, Minnesota
+34 037 - Sussex County, New Jersey
+06 039 - Madera County, California
+18 039 - Elkhart County, Indiana
+34 039 - Union County, New Jersey
+41 039 - Lane County, Oregon
+48 039 - Brazoria County, Texas
+54 039 - Kanawha County, West Virginia
+34 041 - Warren County, New Jersey
+39 041 - Delaware County, Ohio
+45 041 - Florence County, South Carolina
+48 041 - Brazos County, Texas
+51 041 - Chesterfield County, Virginia
+24 043 - Washington County, Maryland
+41 043 - Linn County, Oregon
+42 043 - Dauphin County, Pennsylvania
+13 045 - Carroll County, Georgia
+20 045 - Douglas County, Kansas
+35 045 - San Juan County, New Mexico
+39 045 - Fairfield County, Ohio
+42 045 - Delaware County, Pennsylvania
+45 045 - Greenville County, South Carolina
+06 047 - Merced County, California
+36 047 - Kings County, New York
+26 049 - Genesee County, Michigan
+35 049 - Santa Fe County, New Mexico
+39 049 - Franklin County, Ohio
+42 049 - Erie County, Pennsylvania
+49 049 - Utah County, Utah
+22 051 - Jefferson Parish, Louisiana
+45 051 - Horry County, South Carolina
+06 053 - Monterey County, California
+12 053 - Hernando County, Florida
+49 053 - Washington County, Utah
+53 053 - Pierce County, Washington
+06 055 - Napa County, California
+16 055 - Kootenai County, Idaho
+31 055 - Douglas County, Nebraska
+36 055 - Monroe County, New York
+42 055 - Franklin County, Pennsylvania
+12 057 - Hillsborough County, Florida
+13 057 - Cherokee County, Georgia
+37 057 - Davidson County, North Carolina
+39 057 - Greene County, Ohio
+53 057 - Skagit County, Washington
+06 059 - Orange County, California
+36 059 - Nassau County, New York
+51 059 - Fairfax County, Virginia
+55 059 - Kenosha County, Wisconsin
+08 059 - Jefferson County, Colorado
+06 061 - Placer County, California
+12 061 - Indian River County, Florida
+36 061 - New York County, New York
+48 061 - Cameron County, Texas
+53 061 - Snohomish County, Washington
+13 063 - Clayton County, Georgia
+18 063 - Hendricks County, Indiana
+22 063 - Livingston Parish, Louisiana
+45 063 - Lexington County, South Carolina
+53 063 - Spokane County, Washington
+55 063 - La Crosse County, Wisconsin
+06 065 - Riverside County, California
+06 067 - Sacramento County, California
+21 067 - Fayette County, Kentucky
+36 067 - Onondaga County, New York
+37 067 - Forsyth County, North Carolina
+53 067 - Thurston County, Washington
+08 069 - Larimer County, Colorado
+12 069 - Lake County, Florida
+36 069 - Ontario County, New York
+12 071 - Lee County, Florida
+22 071 - Orleans Parish, Louisiana
+29 071 - Franklin County, Missouri
+36 071 - Orange County, New York
+42 071 - Lancaster County, Pennsylvania
+01 073 - Jefferson County, Alabama
+06 073 - San Diego County, California
+22 073 - Ouachita Parish, Louisiana
+53 073 - Whatcom County, Washington
+55 073 - Marathon County, Wisconsin
+06 075 - San Francisco County, California
+26 075 - Jackson County, Michigan
+06 077 - San Joaquin County, California
+13 077 - Coweta County, Georgia
+53 077 - Yakima County, Washington
+06 079 - San Luis Obispo County, California
+45 079 - Richland County, South Carolina
+01 081 - Lee County, Alabama
+06 081 - San Mateo County, California
+18 081 - Johnson County, Indiana
+26 081 - Kent County, Michigan
+36 081 - Queens County, New York
+42 081 - Lycoming County, Pennsylvania
+06 083 - Santa Barbara County, California
+12 083 - Marion County, Florida
+45 083 - Spartanburg County, South Carolina
+12 085 - Martin County, Florida
+36 085 - Richmond County, New York
+39 085 - Lake County, Ohio
+42 085 - Mercer County, Pennsylvania
+12 086 - Miami-Dade County, Florida
+06 087 - Santa Cruz County, California
+36 087 - Rockland County, New York
+51 087 - Henrico County, Virginia
+06 089 - Shasta County, California
+18 089 - Lake County, Indiana
+39 089 - Licking County, Ohio
+42 089 - Monroe County, Pennsylvania
+12 091 - Okaloosa County, Florida
+17 091 - Kankakee County, Illinois
+18 091 - LaPorte County, Indiana
+20 091 - Johnson County, Kansas
+36 091 - Saratoga County, New York
+42 091 - Montgomery County, Pennsylvania
+45 091 - York County, South Carolina
+26 093 - Livingston County, Michigan
+47 093 - Knox County, Tennessee
+06 095 - Solano County, California
+12 095 - Orange County, Florida
+18 095 - Madison County, Indiana
+39 095 - Lucas County, Ohio
+01 097 - Mobile County, Alabama
+06 097 - Sonoma County, California
+13 097 - Douglas County, Georgia
+17 097 - Lake County, Illinois
+37 097 - Iredell County, North Carolina
+06 099 - Stanislaus County, California
+12 099 - Palm Beach County, Florida
+17 099 - La Salle County, Illinois
+26 099 - Macomb County, Michigan
+29 099 - Jefferson County, Missouri
+08 101 - Pueblo County, Colorado
+12 101 - Pasco County, Florida
+42 101 - Philadelphia County, Pennsylvania
+55 101 - Racine County, Wisconsin
+12 103 - Pinellas County, Florida
+19 103 - Johnson County, Iowa
+22 103 - St. Tammany Parish, Louisiana
+36 103 - Suffolk County, New York
+39 103 - Medina County, Ohio
+12 105 - Polk County, Florida
+18 105 - Monroe County, Indiana
+55 105 - Rock County, Wisconsin
+06 107 - Tulare County, California
+42 107 - Schuylkill County, Pennsylvania
+51 107 - Loudoun County, Virginia
+12 109 - St. Johns County, Florida
+39 109 - Miami County, Ohio
+06 111 - Ventura County, California
+12 111 - St. Lucie County, Florida
+17 111 - McHenry County, Illinois
+21 111 - Jefferson County, Kentucky
+30 111 - Yellowstone County, Montana
+36 111 - Ulster County, New York
+06 113 - Yolo County, California
+12 113 - Santa Rosa County, Florida
+13 113 - Fayette County, Georgia
+17 113 - McLean County, Illinois
+19 113 - Linn County, Iowa
+39 113 - Montgomery County, Ohio
+17 115 - Macon County, Illinois
+26 115 - Monroe County, Michigan
+01 117 - Shelby County, Alabama
+12 117 - Seminole County, Florida
+13 117 - Forsyth County, Georgia
+21 117 - Kenton County, Kentucky
+05 119 - Pulaski County, Arkansas
+17 119 - Madison County, Illinois
+36 119 - Westchester County, New York
+37 119 - Mecklenburg County, North Carolina
+26 121 - Muskegon County, Michigan
+27 123 - Ramsey County, Minnesota
+08 123 - Weld County, Colorado
+26 125 - Oakland County, Michigan
+42 125 - Washington County, Pennsylvania
+47 125 - Montgomery County, Tennessee
+12 127 - Volusia County, Florida
+42 129 - Westmoreland County, Pennsylvania
+37 133 - Onslow County, North Carolina
+39 133 - Portage County, Ohio
+42 133 - York County, Pennsylvania
+13 135 - Gwinnett County, Georgia
+48 135 - Ector County, Texas
+27 137 - St. Louis County, Minnesota
+13 139 - Hall County, Georgia
+26 139 - Ottawa County, Michigan
+27 139 - Scott County, Minnesota
+48 139 - Ellis County, Texas
+55 139 - Winnebago County, Wisconsin
+18 141 - St. Joseph County, Indiana
+48 141 - El Paso County, Texas
+26 145 - Saginaw County, Michigan
+26 147 - St. Clair County, Michigan
+37 147 - Pitt County, North Carolina
+13 151 - Henry County, Georgia
+13 153 - Houston County, Georgia
+19 153 - Polk County, Iowa
+31 153 - Sarpy County, Nebraska
+39 153 - Summit County, Ohio
+51 153 - Prince William County, Virginia
+37 155 - Robeson County, North Carolina
+18 157 - Tippecanoe County, Indiana
+37 159 - Rowan County, North Carolina
+26 161 - Washtenaw County, Michigan
+17 163 - St. Clair County, Illinois
+19 163 - Scott County, Iowa
+26 163 - Wayne County, Michigan
+27 163 - Washington County, Minnesota
+39 165 - Warren County, Ohio
+47 165 - Sumner County, Tennessee
+39 169 - Wayne County, Ohio
+27 171 - Wright County, Minnesota
+20 173 - Sedgwick County, Kansas
+51 177 - Spotsylvania County, Virginia
+17 179 - Tazewell County, Illinois
+37 179 - Union County, North Carolina
+51 179 - Stafford County, Virginia
+48 181 - Grayson County, Texas
+37 183 - Wake County, North Carolina
+48 183 - Gregg County, Texas
+29 189 - St. Louis County, Missouri
+47 189 - Wilson County, Tennessee
+37 191 - Wayne County, North Carolina
+48 215 - Hidalgo County, Texas
+13 223 - Paulding County, Georgia
+48 251 - Johnson County, Texas
+48 303 - Lubbock County, Texas
+48 309 - McLennan County, Texas
+48 329 - Midland County, Texas
+48 375 - Potter County, Texas
+48 381 - Randall County, Texas
+48 423 - Smith County, Texas
+48 439 - Tarrant County, Texas
+48 441 - Taylor County, Texas
+48 479 - Webb County, Texas
+48 485 - Wichita County, Texas
+24 510 - Baltimore city, Maryland
+51 510 - Alexandria city, Virginia
+51 550 - Chesapeake city, Virginia
+51 650 - Hampton city, Virginia
+51 700 - Newport News city, Virginia
+51 710 - Norfolk city, Virginia
+51 740 - Portsmouth city, Virginia
+51 760 - Richmond city, Virginia
+51 810 - Virginia Beach city, Virginia
+
+
+
+Topic: Selectable Geographies
+GESTFIPS
+Geography-FIPS state code
+
+With the following Ranges:
+1  AL
+2  AK
+4  AZ
+5  AR
+6  CA
+8  CO
+9  CT
+10  DE
+11  DC
+12  FL
+13  GA
+15  HI
+16  ID
+17  IL
+18  IN
+19  IA
+20  KS
+21  KY
+22  LA
+23  ME
+24  MD
+25  MA
+26  MI
+27  MN
+28  MS
+29  MO
+30  MT
+31  NE
+32  NV
+33  NH
+34  NJ
+35  NM
+36  NY
+37  NC
+38  ND
+39  OH
+40  OK
+41  OR
+42  PA
+44  RI
+45  SC
+46  SD
+47  TN
+48  TX
+49  UT
+50  VT
+51  VA
+53  WA
+54  WV
+55  WI
+56  WY
+
+
+
+Topic: Selectable Geographies
+GTCO
+FIPS County Code.  Read the full description prior to using this field.
+
+
+
+
+Topic: Demographic Variables
+PEEDUCA
+Demographics-highest level of school completed
+
+With the following Ranges:
+-1  Not in Universe
+31  Less Than 1st Grade
+32  1st,2nd,3rd Or 4th Grade
+33  5th Or 6th Grade
+34  7th Or 8th Grade
+35  9th Grade
+36  10th Grade
+37  11th Grade
+38  12th Grade No Diploma
+39  High School Grad-Diploma Or Equiv (ged)
+40  Some College But No Degree
+41  Associate Degree-Occupational/Vocationl
+42  Associate Deg.-Academic Program
+43  Bachelor's Degree(ex:ba,ab,bs)
+44  MASTER'S DEGREE(EX:MA,MS,MEng,MEd,MSW)
+45  Professional School Deg(ex:md,dds,dvm)
+46  DOCTORATE DEGREE(EX:PhD,EdD)
+
+
+
+Topic: Demographic Variables
+PEMARITL
+Demographics-marital status
+
+With the following Ranges:
+-1  Not in Universe
+1  Married - Spouse Present
+2  Married-Spouse Absent
+3  Widowed
+4  Divorced
+5  Separated
+6  Never Married
+
+
+
+Topic: Demographic Variables
+PESEX
+Demographics-sex
+
+With the following Ranges:
+1  Male
+2  Female
+
+
+
+Topic: Demographic Variables
+PRCITFLG
+Demographics-citizenship allocation flag
+
+With the following Ranges:
+-1  In Universe, Met No Conditions To Assign
+0  Value - No Change
+1  Blank - No Change
+2  Don't Know - No Change
+3  Refused - No Change
+10  Value To Value
+11  Blank To Value
+12  Don't Know To Value
+13  Refused To Value
+20  Value To Longitudinal Value
+21  Blank To Longitudinal Value
+22  Don't Know To Longitudinal Value
+23  Refused To Longitudinal Value
+30  Value to Allocated Value Long.
+31  Blank to Allocated Value Long.
+32  Don't Know to Allocated Value Long.
+33  Refused to Allocated Value Long.
+40  Value To Allocated Value
+41  Blank To Allocated Value
+42  Don't Know To Allocated Value
+43  Refused To Allocated Value
+50  Value To Blank
+52  Don't Know To Blank
+53  Refused To Blank
+
+
+
+Topic: Demographic Variables
+PRCITSHP
+Demographics-United States citizenship group
+
+With the following Ranges:
+1  Native, Born In US
+2  Native, Born in PR or US Outlying Area
+3  Native, Born Abroad Of US Parent(s)
+4  Foreign Born, US Cit By Naturalization
+5  Foreign Born, Not a US Citizen
+
+
+
+Topic: Demographic Variables
+PRFAMNUM
+Demographics-family number
+
+With the following Ranges:
+-1  In Universe, Met No Conditions To Assign
+0  Not a family member
+1  Primary family member only
+2  Subfamily No. 2 Member
+3  Subfamily No. 3 Member
+4  Subfamily No. 4 Member
+5  Subfamily No. 5 Member
+6  Subfamily No. 6 Member
+7  Subfamily No. 7 Member
+8  Subfamily No. 8 Member
+9  Subfamily No. 9 Member
+10  Subfamily No. 10 Member
+11  Subfamily No. 11 Member
+12  Subfamily No. 12 Member
+13  Subfamily No. 13 Member
+14  Subfamily No. 14 Member
+15  Subfamily No. 15 Member
+16  Subfamily No. 16 Member
+17  Subfamily No. 17 Member
+18  Subfamily No. 18 Member
+19  Subfamily No. 19 Member
+
+
+
+Topic: Demographic Variables
+PRMARSTA
+Demographics-marital status(recode)
+
+With the following Ranges:
+-1  In Universe, Met No Conditions To Assign
+1  Married, Civilian Spouse Present
+2  Married, Armed Forces Spouse Present
+3  Married, Spouse Absent (exc. Separated)
+4  Widowed
+5  Divorced
+6  Separated
+7  Never married
+
+
+
+Topic: Demographic Variables
+PEDIPGED
+Demographics-high school,graduation/GED
+
+With the following Ranges:
+-1  Not in Universe
+1  Graduation from High School
+2  GED or  other Equivalent
+
+
+
+Topic: Demographic Variables
+PEHGCOMP
+Demographics-highest grade completed before GED
+
+With the following Ranges:
+-1  Not in Universe
+1  Less than 1st grade
+2  1st, 2nd, 3rd, or 4th Grade
+3  5th or 6th Grade
+4  7th or 8th Grade
+5  9th Grade
+6  10th Grade
+7  11th Grade
+8  12th Grade, NO DIPLOMA
+
+
+
+Topic: Demographic Variables
+PECYC
+Demographics-years of college credit completed
+
+With the following Ranges:
+-1  Not in Universe
+1  Less than 1 year (includes 0 years completed)?
+2  The first, or Freshman year?
+3  The second, or Sophomore year?
+4  The third, or Junior year?
+5  Four or more years?
+
+
+
+Topic: Demographic Variables
+PRCHLD
+Demographics-presence of own children <18 years by age group
+
+With the following Ranges:
+-1  NIU (Not a parent)
+0  No own children under 18 years of age
+1  All own children 0- 2 years of age
+2  All own chldrn 3- 5 years of age
+3  All own chldrn 6-13 years of age
+4  All own chldrn 14-17 years of age
+5  Own chldrn 0-2,3-5 years of age (none  6-17)
+6  Own chldrn 0-2,6-13 years of age (none  3- 5 or 14-17)
+7  Own chldrn 0-2,14-17 years of age (none  3-13)
+8  Own chldrn 3-5,6-13 years of age (none  0- 2 or 14-17)
+9  Own chldrn 3-5,14-17 years of age (none  0- 2 or  6-13)
+10  Own children 6-13 and 14-17 years of age (none  0- 5)
+11  Own children 0-2, 3- 5, and  6-13 years of age (none 14-17)
+12  Own chldrn 0-2, 3- 5, and 14-17 years of age (none 6-13)
+13  Own childrn 0-2, 6-13, and 14-17 years of age (none 3- 5)
+14  Own children 3-5, 6-13, and 14-17 years of age (none  0- 2)
+15  Own children from all age groups
+
+
+
+Topic: Demographic Variables
+PRNMCHLD
+Demographics-number of own children <18 years of age
+
+With the following Ranges:
+-1  NIU (Not a parent)
+0:99  # of own children under 18 years of age
+
+
+
+Topic: Demographic Variables
+PEHSPNON
+Demographics- hispanic/non-hispanic origin
+
+With the following Ranges:
+1  Hispanic
+2  Non-Hispanic
+
+
+
+Topic: Demographic Variables
+PREDUCA4
+Educational Attainment (recode - 4 categories)
+
+Is a recode of the variable(s) PEEDUCA
+1  Less than a high school diploma - {31, 32, 33, 34, 35, 36, 37, 38 }
+2  High school graduates, no college - {39 }
+3  Some college or associate degree - {40, 41, 42 }
+4  Bachelor's degree or higher - {43, 44, 45, 46 }
+
+
+
+Topic: Demographic Variables
+PREDUCA5
+Educational Attainment (recode - 5 categories)
+
+Is a recode of the variable(s) PEEDUCA
+1  Less than a high school diploma - {31, 32, 33, 34, 35, 36, 37, 38 }
+2  High school graduates, no college - {39 }
+3  Some college, no degree - {40 }
+4  Associate degree - {41, 42 }
+5  Bachelor's degree or higher - {43, 44, 45, 46 }
+
+
+
+Topic: Demographic Variables
+PEDADTYP
+Type of Father
+
+With the following Ranges:
+-1  No Father Present
+01  Biological
+02  Step
+03  Adopted
+
+
+
+Topic: Demographic Variables
+PEMOMTYP
+Type of Mother
+
+With the following Ranges:
+-1  No Mother Present
+01  Biological
+02  Step
+03  Adopted
+
+
+
+Topic: Demographic Variables
+PTDTRACE
+Demographics- race of respondent
+
+With the following Ranges:
+01  White only
+02  Black only
+03  American Indian, Alaskan Native Only
+04  Asian only
+05  Hawaiian/Pacific Islander Only
+06  White-Black
+07  White-AI
+08  White-Asian
+09  White-HP
+10  Black-AI
+11  Black-Asian
+12  Black-HP
+13  AI-Asian
+14  AI-HP
+15  Asian-HP
+16  W-B-AI
+17  W-B-A
+18  W-B-HP
+19  W-AI-A
+20  W-AI-HP
+21  W-A-HP
+22  B-AI-A
+23  W-B-AI-A
+24  W-AI-A-HP
+25  Other 3 Race Combinations
+26  Other 4 and 5 Race Combinations
+
+
+
+Topic: Demographic Variables
+PENATVTY
+Demographics - native country of sample person
+
+With the following Ranges:
+057  United States
+060  American Samoa
+066  Guam
+069  Northern Marianas
+073  Puerto Rico
+078  U. S. Virgin Islands
+100  Albania
+102  Austria
+103  Belgium
+104  Bulgaria
+105  Czechoslovakia
+106  Denmark
+108  Finland
+109  France
+110  Germany
+116  Greece
+117  Hungary
+118  Iceland
+119  Ireland
+120  Italy
+126  Netherlands
+127  Norway
+128  Poland
+129  Portugal
+130  Azores
+132  Romania
+134  Spain
+136  Sweden
+137  Switzerland
+138  United Kingdom
+139  England
+140  Scotland
+142  Northern Ireland
+147  Yugoslavia
+148  Czech Republic
+149  Slovakia
+150  Bosnia & Herzegovina
+151  Croatia
+152  Macedonia
+154  Serbia
+155  Estonia
+156  Latvia
+157  Lithuania
+158  Armenia
+159  Azerbaijan
+160  Belarus
+161  Georgia
+162  Moldova
+163  Russia
+164  Ukraine
+165  USSR
+166  Europe, not specified
+168  Montenegro
+200  Afghanistan
+202  Bangladesh
+203  Bhutan
+205  Myanmar (Burma)
+206  Cambodia
+207  China
+209  Hong Kong
+210  India
+211  Indonesia
+212  Iran
+213  Iraq
+214  Israel
+215  Japan
+216  Jordan
+217  Korea
+218  Kazakhstan
+220  South Korea
+222  Kuwait
+223  Laos
+224  Lebanon
+226  Malaysia
+228  Mongolia
+229  Nepal
+231  Pakistan
+233  Philippines
+235  Saudi Arabia
+236  Singapore
+238  Sri Lanka
+239  Syria
+240  Taiwan
+242  Thailand
+243  Turkey
+245  United Arab Emirates
+246  Uzbekistan
+247  Vietnam
+248  Yemen
+249  Asia, not specified
+300  Bermuda
+301  Canada
+303  Mexico
+310  Belize
+311  Costa Rica
+312  El Salvador
+313  Guatemala
+314  Honduras
+315  Nicaragua
+316  Panama
+321  Antigua and Barbuda
+323  Bahamas
+324  Barbados
+327  Cuba
+328  Dominica
+329  Dominican Republic
+330  Grenada
+332  Haiti
+333  Jamaica
+338  St. Kitts--Nevis
+339  St. Lucia
+340  St. Vincent and the Grenadines
+341  Trinidad and Tobago
+343  West Indies, not specified
+360  Argentina
+361  Bolivia
+362  Brazil
+363  Chile
+364  Columbia
+365  Ecuador
+368  Guyana
+369  Paraguay
+370  Peru
+372  Uruguay
+373  Venezuela
+374  South America, not specified
+399  Americas, not specified
+400  Algeria
+407  Cameroon
+408  Cape Verde
+412  Congo
+414  Egypt
+416  Ethiopia
+417  Eritrea
+421  Ghana
+423  Guinea
+425  Ivory Coast
+427  Kenya
+429  Liberia
+430  Libya
+436  Morocco
+440  Nigeria
+444  Senegal
+447  Sierra Leone
+448  Somalia
+449  South Africa
+451  Sudan
+453  Tanzania
+454  Togo
+457  Uganda
+459  Zaire
+460  Zambia
+461  Zimbabwe
+462  Africa, Not Specified
+501  Australia
+508  Fiji
+511  Marshall Islands
+512  Micronesia
+515  New Zealand
+523  Tonga
+527  Samoa
+555  Elsewhere
+
+
+
+Topic: Demographic Variables
+PEFNTVTY
+Demographics - native country of father
+
+With the following Ranges:
+057  United States
+060  American Samoa
+066  Guam
+069  Northern Marianas
+073  Puerto Rico
+078  U. S. Virgin Islands
+100  Albania
+102  Austria
+103  Belgium
+104  Bulgaria
+105  Czechoslovakia
+106  Denmark
+108  Finland
+109  France
+110  Germany
+116  Greece
+117  Hungary
+118  Iceland
+119  Ireland
+120  Italy
+126  Netherlands
+127  Norway
+128  Poland
+129  Portugal
+130  Azores
+132  Romania
+134  Spain
+136  Sweden
+137  Switzerland
+138  United Kingdom
+139  England
+140  Scotland
+142  Northern Ireland
+147  Yugoslavia
+148  Czech Republic
+149  Slovakia
+150  Bosnia & Herzegovina
+151  Croatia
+152  Macedonia
+154  Serbia
+155  Estonia
+156  Latvia
+157  Lithuania
+158  Armenia
+159  Azerbaijan
+160  Belarus
+161  Georgia
+162  Moldova
+163  Russia
+164  Ukraine
+165  USSR
+166  Europe, not specified
+168  Montenegro
+200  Afghanistan
+202  Bangladesh
+203  Bhutan
+205  Myanmar (Burma)
+206  Cambodia
+207  China
+209  Hong Kong
+210  India
+211  Indonesia
+212  Iran
+213  Iraq
+214  Israel
+215  Japan
+216  Jordan
+217  Korea
+218  Kazakhstan
+220  South Korea
+222  Kuwait
+223  Laos
+224  Lebanon
+226  Malaysia
+228  Mongolia
+229  Nepal
+231  Pakistan
+233  Philippines
+235  Saudi Arabia
+236  Singapore
+238  Sri Lanka
+239  Syria
+240  Taiwan
+242  Thailand
+243  Turkey
+245  United Arab Emirates
+246  Uzbekistan
+247  Vietnam
+248  Yemen
+249  Asia, not specified
+300  Bermuda
+301  Canada
+303  Mexico
+310  Belize
+311  Costa Rica
+312  El Salvador
+313  Guatemala
+314  Honduras
+315  Nicaragua
+316  Panama
+321  Antigua and Barbuda
+323  Bahamas
+324  Barbados
+327  Cuba
+328  Dominica
+329  Dominican Republic
+330  Grenada
+332  Haiti
+333  Jamaica
+338  St. Kitts--Nevis
+339  St. Lucia
+340  St. Vincent and the Grenadines
+341  Trinidad and Tobago
+343  West Indies, not specified
+360  Argentina
+361  Bolivia
+362  Brazil
+363  Chile
+364  Columbia
+365  Ecuador
+368  Guyana
+369  Paraguay
+370  Peru
+372  Uruguay
+373  Venezuela
+374  South America, not specified
+399  Americas, not specified
+400  Algeria
+407  Cameroon
+408  Cape Verde
+412  Congo
+414  Egypt
+416  Ethiopia
+417  Eritrea
+421  Ghana
+423  Guinea
+425  Ivory Coast
+427  Kenya
+429  Liberia
+430  Libya
+436  Morocco
+440  Nigeria
+444  Senegal
+447  Sierra Leone
+448  Somalia
+449  South Africa
+451  Sudan
+453  Tanzania
+454  Togo
+457  Uganda
+459  Zaire
+460  Zambia
+461  Zimbabwe
+462  Africa, Not Specified
+501  Australia
+508  Fiji
+511  Marshall Islands
+512  Micronesia
+515  New Zealand
+523  Tonga
+527  Samoa
+555  Elsewhere
+
+
+
+Topic: Demographic Variables
+PEMNTVTY
+Demographics - native country of mother
+
+With the following Ranges:
+057  United States
+060  American Samoa
+066  Guam
+069  Northern Marianas
+073  Puerto Rico
+078  U. S. Virgin Islands
+100  Albania
+102  Austria
+103  Belgium
+104  Bulgaria
+105  Czechoslovakia
+106  Denmark
+108  Finland
+109  France
+110  Germany
+116  Greece
+117  Hungary
+118  Iceland
+119  Ireland
+120  Italy
+126  Netherlands
+127  Norway
+128  Poland
+129  Portugal
+130  Azores
+132  Romania
+134  Spain
+136  Sweden
+137  Switzerland
+138  United Kingdom
+139  England
+140  Scotland
+142  Northern Ireland
+147  Yugoslavia
+148  Czech Republic
+149  Slovakia
+150  Bosnia & Herzegovina
+151  Croatia
+152  Macedonia
+154  Serbia
+155  Estonia
+156  Latvia
+157  Lithuania
+158  Armenia
+159  Azerbaijan
+160  Belarus
+161  Georgia
+162  Moldova
+163  Russia
+164  Ukraine
+165  USSR
+166  Europe, not specified
+168  Montenegro
+200  Afghanistan
+202  Bangladesh
+203  Bhutan
+205  Myanmar (Burma)
+206  Cambodia
+207  China
+209  Hong Kong
+210  India
+211  Indonesia
+212  Iran
+213  Iraq
+214  Israel
+215  Japan
+216  Jordan
+217  Korea
+218  Kazakhstan
+220  South Korea
+222  Kuwait
+223  Laos
+224  Lebanon
+226  Malaysia
+228  Mongolia
+229  Nepal
+231  Pakistan
+233  Philippines
+235  Saudi Arabia
+236  Singapore
+238  Sri Lanka
+239  Syria
+240  Taiwan
+242  Thailand
+243  Turkey
+245  United Arab Emirates
+246  Uzbekistan
+247  Vietnam
+248  Yemen
+249  Asia, not specified
+300  Bermuda
+301  Canada
+303  Mexico
+310  Belize
+311  Costa Rica
+312  El Salvador
+313  Guatemala
+314  Honduras
+315  Nicaragua
+316  Panama
+321  Antigua and Barbuda
+323  Bahamas
+324  Barbados
+327  Cuba
+328  Dominica
+329  Dominican Republic
+330  Grenada
+332  Haiti
+333  Jamaica
+338  St. Kitts--Nevis
+339  St. Lucia
+340  St. Vincent and the Grenadines
+341  Trinidad and Tobago
+343  West Indies, not specified
+360  Argentina
+361  Bolivia
+362  Brazil
+363  Chile
+364  Columbia
+365  Ecuador
+368  Guyana
+369  Paraguay
+370  Peru
+372  Uruguay
+373  Venezuela
+374  South America, not specified
+399  Americas, not specified
+400  Algeria
+407  Cameroon
+408  Cape Verde
+412  Congo
+414  Egypt
+416  Ethiopia
+417  Eritrea
+421  Ghana
+423  Guinea
+425  Ivory Coast
+427  Kenya
+429  Liberia
+430  Libya
+436  Morocco
+440  Nigeria
+444  Senegal
+447  Sierra Leone
+448  Somalia
+449  South Africa
+451  Sudan
+453  Tanzania
+454  Togo
+457  Uganda
+459  Zaire
+460  Zambia
+461  Zimbabwe
+462  Africa, Not Specified
+501  Australia
+508  Fiji
+511  Marshall Islands
+512  Micronesia
+515  New Zealand
+523  Tonga
+527  Samoa
+555  Elsewhere
+
+
+
+Topic: Demographic Variables
+PRDASIAN
+Demographics Detailed Asian Subgroup
+
+With the following Ranges:
+-1  Not in Universe
+1  Asian Indian
+2  Chinese
+3  Filipino
+4  Japanese
+5  Korean
+6  Vietnamese
+7  Other Asian
+
+
+
+Topic: Demographic Variables
+PRDTHSP
+Detailed Hispanic Recode
+
+With the following Ranges:
+1  Mexican
+2  Puerto Rican
+3  Cuban
+4  Dominican
+5  Salvadoran
+6  Central American, excluding Salvadoran
+7  South American
+8  Other Hispanic
+
+
+
+Topic: Demographic Variables
+PRINUYER
+Recoded Year of Entry for Foreign Born
+
+With the following Ranges:
+-1  Not In Universe (Born In U.S.)
+0  Not Foreign Born,(Born in the U. S.)
+1  Before 1950
+2  1950-1959
+3  1960-1964
+4  1965-1969
+5  1970-1974
+6  1975-1979
+7  1980-1981
+8  1982-1983
+9  1984-1985
+10  1986-1987
+11  1988-1989
+12  1990-1991
+13  1992-1993
+14  1994-1995
+15  1996-1997
+16  1998-1999
+17  2000-2001
+18  2002-2003
+19  2004-2005
+20  2006-2007
+21  2008-2009
+22  2010-2011
+23  2012-2014
+
+
