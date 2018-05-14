@@ -1,0 +1,150 @@
+CPS (Food Security),HHSUPWGT,Weight - household weight for supplement household,910954,Dec 2013 - current
+CPS (Food Security),PWSUPWGT,Weight - person weight for supplement household,910955,Dec 2013 - current
+CPS (Food Security),HES1A,Expend - shopped at supermarket/grocery store last week,910956,Dec 2013 - current
+CPS (Food Security),HES1B,"Expend - shopped at warehouse clubs/produce stands, etc.",910957,Dec 2013 - current
+CPS (Food Security),HES1C,Expend - bought food at restaurant/cafeteria/etc. last week,910958,Dec 2013 - current
+CPS (Food Security),HES1D,Expend - bought food from any other kind of place last week,910959,Dec 2013 - current
+CPS (Food Security),HETS2O,Expend - total amount spent at supermarket/grocery store,910960,Dec 2013 - current
+CPS (Food Security),HETS3O,Expend - amount for nonfood at supermarket/grocery store,910961,Dec 2013 - current
+CPS (Food Security),HETS4O,"Expend - total amount spent at warehouse, clubs, etc.",910962,Dec 2013 - current
+CPS (Food Security),HETS5O,"Expend - amount for nonfood at warehouse, clubs, etc.",910963,Dec 2013 - current
+CPS (Food Security),HETS6O,Expend - total amount spent for food away from home,910964,Dec 2013 - current
+CPS (Food Security),HETS7O,Expend - total amount spent for food anywhere else,910965,Dec 2013 - current
+CPS (Food Security),HETS8O,Expend - total amount spent for food last week,910966,Dec 2013 - current
+CPS (Food Security),HETS8OU,Expend - USUAL amount spent for food per week,910967,Dec 2013 - current
+CPS (Food Security),HES8B,Expend/need a - need to spend more or could spend less,910968,Dec 2013 - current
+CPS (Food Security),HETS8CO,Expend/need c - amount more would need to spend,910969,Dec 2013 - current
+CPS (Food Security),HETS8DO,Expend/need d - amount less could spend,910970,Dec 2013 - current
+CPS (Food Security),HES9,Screen-ran short of money in past 12 months,910971,Dec 2013 - current
+CPS (Food Security),HESP1,Program - SNAP received in past 12 months,910972,Dec 2013 - current
+CPS (Food Security),HESP21,Program - SNAP received in January,910973,Dec 2013 - current
+CPS (Food Security),HESP22,Program - SNAP received in February,910974,Dec 2013 - current
+CPS (Food Security),HESP23,Program - SNAP received in March,910975,Dec 2013 - current
+CPS (Food Security),HESP24,Program - SNAP received in April,910976,Dec 2013 - current
+CPS (Food Security),HESP25,Program - SNAP received in May,910977,Dec 2013 - current
+CPS (Food Security),HESP26,Program - SNAP received in June,910978,Dec 2013 - current
+CPS (Food Security),HESP27,Program - SNAP received in July,910979,Dec 2013 - current
+CPS (Food Security),HESP28,Program - SNAP received in August,910980,Dec 2013 - current
+CPS (Food Security),HESP29,Program - SNAP received in September,910981,Dec 2013 - current
+CPS (Food Security),HESP210,Program - SNAP received in October,910982,Dec 2013 - current
+CPS (Food Security),HESP211,Program - SNAP received in November,910983,Dec 2013 - current
+CPS (Food Security),HESP212,Program - SNAP received in December,910984,Dec 2013 - current
+CPS (Food Security),HETSP2D,Program - date SNAP last received,910985,Dec 2013 - current
+CPS (Food Security),HETSP3O,Program - amount of SNAP benefit received,910986,Dec 2013 - current
+CPS (Food Security),HESP3OTC,Program - topcode flag for amount of food stamps,910987,Dec 2013 - current
+CPS (Food Security),HESP6,"Program - free or reduced-cost lunches at school, past 30 days",910988,Dec 2013 - current
+CPS (Food Security),HESP7,"Program - free or reduced-cost brakfasts at school, past 30 days",910989,Dec 2013 - current
+CPS (Food Security),HESP7A,"Program - free or reduced-cost food, day care or Head Start",910990,Dec 2013 - current
+CPS (Food Security),HESP8,"Program - foods received from WIC Program, past 30 days",910991,Dec 2013 - current
+CPS (Food Security),HETSP9,Program - number of household getting WIC foods,910992,Dec 2013 - current
+CPS (Food Security),HESP9TC,Program - topcode flag for number getting WIC foods,910993,Dec 2013 - current
+CPS (Food Security),HESS1,"Screen - sufficiency of food eaten in household, quantity",910994,Dec 2013 - current
+CPS (Food Security),HESS2,"Scale12 - worried food would run out, past 12 months",910995,Dec 2013 - current
+CPS (Food Security),HESSM2,"Scale30 - worried food would run out, past 30 days",910996,Dec 2013 - current
+CPS (Food Security),HESS3,"Scale12 - food bought didn't last, past 12 months",910997,Dec 2013 - current
+CPS (Food Security),HESSM3,"Scale30 - food bought didn't last, past 30 days",910998,Dec 2013 - current
+CPS (Food Security),HESS4,"Scale12 - couldn't afford balanced meals, past 12 months",910999,Dec 2013 - current
+CPS (Food Security),HESSM4,"Scale30 - couldn't afford balanced meals, past 30 days",911000,Dec 2013 - current
+CPS (Food Security),HESH2,"Scale12 - adult cut size or skipped meals, past 12 mont",911001,Dec 2013 - current
+CPS (Food Security),HESHF2,"Scale12 - frequency adult cut or skipped, past 12 mon",911002,Dec 2013 - current
+CPS (Food Security),HESHM2,"Scale30 - adult cut size or skipped meals, past 30 days",911003,Dec 2013 - current
+CPS (Food Security),HESHMF2,"Scale30 - frequency adult cut or skipped, past 30 days",911004,Dec 2013 - current
+CPS (Food Security),HESH3,"Scale12 - ate less than felt they should, past 12 months",911005,Dec 2013 - current
+CPS (Food Security),HESHF3,"Scale12 - frequency ate less than felt they should, past 12",911006,Dec 2013 - current
+CPS (Food Security),HESHM3,"Scale30 - ate less than felt they should, past 30 days",911007,Dec 2013 - current
+CPS (Food Security),HESHMF3,"Scale30 - frequency ate less than felt they should, past 30",911008,Dec 2013 - current
+CPS (Food Security),HESH4,"Scale 12 - respondent hungry but didn't eat, past 12 months",911009,Dec 2013 - current
+CPS (Food Security),HESHF4,"Scale 12 - frequency respondent hungry, past 12 months",911010,Dec 2013 - current
+CPS (Food Security),HESHM4,"Scale30 - respondent hungry but didn't eat, past 30 days",911011,Dec 2013 - current
+CPS (Food Security),HESHMF4,"Scale30 - frequency respondent hungry but didn't eat, past 3",911012,Dec 2013 - current
+CPS (Food Security),HESH5,"Scale12 - respondent lost weight, past 12 months",911013,Dec 2013 - current
+CPS (Food Security),HESHM5,"Scale30 - respondent lost weight, past 30 days",911014,Dec 2013 - current
+CPS (Food Security),HESSH1,"Scale12 - adult not eat whole day, past 12 months",911015,Dec 2013 - current
+CPS (Food Security),HESSHF1,"Scale12 - frequency adult not eat whole day, past 12 months",911016,Dec 2013 - current
+CPS (Food Security),HESSHM1,"Scale30 - adult not eat whole day, past 30 days",911017,Dec 2013 - current
+CPS (Food Security),HESSHMF1,"Scale30 - frequency adult not eat whole day, past 30 days",911018,Dec 2013 - current
+CPS (Food Security),HESS5,"Scale12 - child fed few kinds of low-cost foods, past 12 mon",911019,Dec 2013 - current
+CPS (Food Security),HESSM5,"Scale30 - child fed few kinds of low-cost foods, past 30 day",911020,Dec 2013 - current
+CPS (Food Security),HESS6,"Scale12 - couldn't feed child balanced meals, past 12 months",911021,Dec 2013 - current
+CPS (Food Security),HESSM6,"Scale30 - couldn't feed child balanced meals, past 30 days",911022,Dec 2013 - current
+CPS (Food Security),HESH1,"Scale12 - child not eating enough, past 12 months",911023,Dec 2013 - current
+CPS (Food Security),HESHM1,"Scale30 - child not eating enough, past 30 days",911024,Dec 2013 - current
+CPS (Food Security),HESSH2,"Scale12 - cut size of child's meals, past 12 months",911025,Dec 2013 - current
+CPS (Food Security),HESSHF2,"Scale12 - frequency cut size of child's meals, past 12 month",911026,Dec 2013 - current
+CPS (Food Security),HESSHM2,"Scale30 - cut size of child's meals, past 30 days",911027,Dec 2013 - current
+CPS (Food Security),HESSHMF2,"Scale30 - frequency cut size of child's meals, past 30 days",911028,Dec 2013 - current
+CPS (Food Security),HESSH3,Scale12 - child hungry - past 12 months,911029,Dec 2013 - current
+CPS (Food Security),HESSHF3,Scale12 - frequency child hungry - past 12 months,911030,Dec 2013 - current
+CPS (Food Security),HESSHM3,"Scale30 - child hungry, past 30 days",911031,Dec 2013 - current
+CPS (Food Security),HESSHMF3,"Scale30 - frequency child hungry, past 30 days",911032,Dec 2013 - current
+CPS (Food Security),HESSH4,"Scale12 - child skipped meal, past 12 months",911033,Dec 2013 - current
+CPS (Food Security),HESSHF4,"Scale12 - frequency child skipped meal, past 12 months",911034,Dec 2013 - current
+CPS (Food Security),HESSHM4,"Scale30 - child skipped meal, past 30 days",911035,Dec 2013 - current
+CPS (Food Security),HESSHMF4,"Scale30 - frequency child skipped meal, past 30 days",911036,Dec 2013 - current
+CPS (Food Security),HESSH5,"Scale12 - child didn't eat whole day, past 12 months",911037,Dec 2013 - current
+CPS (Food Security),HESSHM5,"Scale30 - child didn't eat whole day, past 30 days",911038,Dec 2013 - current
+CPS (Food Security),HESC1,"meals delivered to home, past 30 days",911039,Dec 2013 - current
+CPS (Food Security),HESC2,"ate meals at a community program, past 30 days",911040,Dec 2013 - current
+CPS (Food Security),HESC3,"Coping - got food from food pantry, past 12 months",911041,Dec 2013 - current
+CPS (Food Security),HESCF3,"Coping - frequency got food from food pantry, past 12 months",911042,Dec 2013 - current
+CPS (Food Security),HESCM3,"Coping - frequency got food from food pantry, past 30 days",911043,Dec 2013 - current
+CPS (Food Security),HESC3A,Coping - could get emergency food if needed,911044,Dec 2013 - current
+CPS (Food Security),HESC4,"Coping - ate meals at soup kitchen, past 12 months",911045,Dec 2013 - current
+CPS (Food Security),HESCF4,"Coping - frequency ate meals at soup kitchen, past 12 months",911046,Dec 2013 - current
+CPS (Food Security),HESCM4,"Coping - ate meals at soup kitchen, past 30 days",911047,Dec 2013 - current
+CPS (Food Security),HRSUPINT,SUP - supplement interview status,911048,Dec 2013 - current
+CPS (Food Security),HRPOOR,POOR - household income relative to 185 pct. poverty,911049,Dec 2013 - current
+CPS (Food Security),HRFS12CX,"Food Sec CX - common screen indicator, 12-month scale",911050,Dec 2013 - current
+CPS (Food Security),HRFS12M1,"Food Sec M1 - Food Security Summary, 12 month scale",911051,Dec 2013 - current
+CPS (Food Security),HRFS12MD,"Food Sec M2 (MD) - Detailed food security status, 12-month",911052,Dec 2013 - current
+CPS (Food Security),HRFS12M3,"Food Sec M3 - raw score, 12-month",911053,Dec 2013 - current
+CPS (Food Security),HRFS12M4,"Food Sec M4 - Rasch scale score, 12-month",911054,Dec 2013 - current
+CPS (Food Security),HRFS12MC,"Food Sec M5 (MC) - children's food security status, 12-month",911055,Dec 2013 - current
+CPS (Food Security),HRFS12M6,"Food Sec M6 - children's scale raw score, 12-month",911056,Dec 2013 - current
+CPS (Food Security),HRFS12M7,"Food Sec M7 - children's Rasch scale score, 12-month",911057,Dec 2013 - current
+CPS (Food Security),HRFS12M8,"Food Sec M8 - Adult Food Security Status, 12 month scale",911058,Dec 2013 - current
+CPS (Food Security),HRFS12M9,"Food Sec M9 - Adult food security raw score, 12-month",911059,Dec 2013 - current
+CPS (Food Security),HRFS12ME,"Food Sec ME - Adult food security rasch scale score, 12 month",911060,Dec 2013 - current
+CPS (Food Security),HRFS30D1,"Food Sec 30D1 - Summary food security status, 30-day",911061,Dec 2013 - current
+CPS (Food Security),HRFS30D2,"Food Sec 30D2 - Detailed food security status, 30-day",911062,Dec 2013 - current
+CPS (Food Security),HRFS30D3,"Food Sec 30D3 - food security raw score, 30-day",911063,Dec 2013 - current
+CPS (Food Security),HRFS30D4,"Food Sec 30D4 - food security rasch scale score, 30-day",911064,Dec 2013 - current
+CPS (Food Security),HRFS30D5,"Food Sec 30D5 - children's food security status, 30-day",911065,Dec 2013 - current
+CPS (Food Security),HRFS30D6,"Food Sec 30D6 - children's food security raw score, 30-day",911066,Dec 2013 - current
+CPS (Food Security),HRFS30D7,"Food Sec 30D7 - children's food security Rasch Scale, 30-day",911067,Dec 2013 - current
+CPS (Food Security),HRFS30D8,"Food Sec 30D8 - adult food security, 30-day",911068,Dec 2013 - current
+CPS (Food Security),HRFS30D9,"Food Sec 30D9 - adult food security raw score, 30-day",911069,Dec 2013 - current
+CPS (Food Security),HRFS30DE,"Food Sec 30DE- adult food security rasch scale score, 30-day",911070,Dec 2013 - current
+CPS (Basic),HUFINAL,"Household-final code,status of interview",286767,Apr 2004 - current
+CPS (Basic),HRMONTH,Household-month of interview,11177,Jan 1994 - current
+CPS (Basic),HRNUMHOU,Household-total # of members,11178,Jan 1994 - current
+CPS (Basic),HEFAMINC,Household-total family income in past 12 months,569019,Jan 2010 - current
+CPS (Basic),PESCHENR,"School Enrollment-in high school/college/university,y/n",11494,Jan 1994 - current
+CPS (Basic),PESCHFT,School Enrollment-full-time/part-time student,11495,Jan 1994 - current
+CPS (Basic),PESCHLVL,School Enrollment-in high school/college/university,11496,Jan 1994 - current
+CPS (Basic),PRNLFSCH,School Enrollment-(not in labor force)school/not in school,11497,Jan 1994 - current
+CPS (Basic),GEOG-101,County,-101,May 2014 - current
+CPS (Basic),PEEDUCA,Demographics-highest level of school completed,11206,Jan 1994 - current
+CPS (Basic),PEMARITL,Demographics-marital status,11208,Jan 1994 - current
+CPS (Basic),PESEX,Demographics-sex,11214,Jan 1994 - current
+CPS (Basic),PRCITFLG,Demographics-citizenship allocation flag,11216,Jan 1994 - current
+CPS (Basic),PRCITSHP,Demographics-United States citizenship group,11217,Jan 1994 - current
+CPS (Basic),PRFAMNUM,Demographics-family number,11218,Jan 1994 - current
+CPS (Basic),PRMARSTA,Demographics-marital status(recode),11223,Jan 1994 - current
+CPS (Basic),PEDIPGED,"Demographics-high school,graduation/GED",14682,Jan 1998 - current
+CPS (Basic),PEHGCOMP,Demographics-highest grade completed before GED,14684,Jan 1998 - current
+CPS (Basic),PECYC,Demographics-years of college credit completed,14686,Jan 1998 - current
+CPS (Basic),PRCHLD,Demographics-presence of own children,42604,Nov 1999 - current
+CPS (Basic),PRNMCHLD,Demographics-number of own children,42605,Nov 1999 - current
+CPS (Basic),PEHSPNON,Demographics- hispanic/non-hispanic origin,139040,Jan 2003 - current
+CPS (Basic),PREDUCA4,Educational Attainment (recode - 4 categories),-43001,Jan 1994 - current
+CPS (Basic),PREDUCA5,Educational Attainment (recode - 5 categories),-43002,Jan 1994 - current
+CPS (Basic),PEDADTYP,Type of Father,550508,Jan 2007 - current
+CPS (Basic),PEMOMTYP,Type of Mother,550509,Jan 2007 - current
+CPS (Basic),PTDTRACE,Demographics- race of respondent,694899,May 2012 - current
+CPS (Basic),PENATVTY,Demographics - native country of sample person,694902,May 2012 - current
+CPS (Basic),PEFNTVTY,Demographics - native country of father,694903,May 2012 - current
+CPS (Basic),PEMNTVTY,Demographics - native country of mother,694904,May 2012 - current
+CPS (Basic),PRDASIAN,Demographics Detailed Asian Subgroup,717866,Jan 2013 - current
+CPS (Basic),PRDTHSP,Detailed Hispanic Recode,927893,Jan 2014 - current
+CPS (Basic),PRINUYER,Recoded Year of Entry for Foreign Born,927901,Jan 2014 - current
