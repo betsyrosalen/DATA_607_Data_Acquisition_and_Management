@@ -47,25 +47,19 @@ bcc_data <- as.data.frame(read_spss(file.path("~","OneDrive","CUNY SPS MDS","DAT
 
 The Census data was much more difficult to obtain.  I first tried downloading the full Current Population Survey Food Security Supplement (CPS) dataset from here: <https://thedataweb.rm.census.gov/ftp/cps_ftp.html#cpssupps> but the format of the data made it very difficult to work with.  There was no header row and every method I tried using to import the data did not result in a useful dataframe.  
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE}
 # Can't get read.delim to work.  Tried different encodings and delimiters.  It loads as 150,000+ records of one variable.  
 # There's no header to tell what the data means either although that can be handled with the documentation
 census_data <- read.delim("/Users/Betsy/OneDrive/CUNY SPS MDS/DATA 607 - Aquisition and Management/Final Project/dec16pub.dat", sep = "\t", encoding = "ASCII")
-```
 
-```{r eval=FALSE, include=FALSE}
 # Can't get read_tsv to work either... 
 library(readr)
 census_data <- read_tsv("/Users/Betsy/OneDrive/CUNY SPS MDS/DATA 607 - Aquisition and Management/Final Project/dec16pub.dat", col_names=FALSE)
-```
 
-```{r eval=FALSE, include=FALSE}
 # Can't get fread to work either... 
 library(data.table)
 census_data <- fread("/Users/Betsy/OneDrive/CUNY SPS MDS/DATA 607 - Aquisition and Management/Final Project/dec16pub.dat", sep=" ")
-```
 
-```{r eval=FALSE, include=FALSE}
 # Tried saving as a csv file and then using edit replace to replace all spaces with commas, but that didn't work either... 
 # It imported nicely, but unfortunately the data didn't line up correctly and data points wound up in wrong columns
 census_data <- read.csv("/Users/Betsy/OneDrive/CUNY SPS MDS/DATA 607 - Aquisition and Management/Final Project/dec16pubcopy.csv", header=FALSE)
@@ -75,7 +69,7 @@ census_data <- read.csv("/Users/Betsy/OneDrive/CUNY SPS MDS/DATA 607 - Aquisitio
 
 Since the direct download didn't work, I decided to try switching to a new approach using the [Census APIs](https://www.census.gov/data/developers/data-sets.html).  This worked really well, but in the end was also not useful because apparently I don't think the Current Population Survey Food Security Supplement (CPS) Data is available via the API... 
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE}
 # This is just a test to make sure the API is working, but I couldn't find the correct API name and variable names for the food security data that I need.  I don't think they are avaiilable.
 # you can get a Census API key here: <https://api.census.gov/data/key_signup.html>
 library(censusapi)
@@ -230,14 +224,11 @@ plot(bcc.likert.yn, center=1.5) + ggtitle("BCC - Over 3 Months")
 
 census.likert.30d.yn2 <- likert(census.30d.yn2)
 plot(census.likert.30d.yn2, center=1.5) + ggtitle("Corresponding Census Data  - Over 30 Days")
-
-#census.likert.12m.yn <- likert(census.12m.yn)
-#plot(census.likert.12m.yn, center=5.5)
 ```
 
-##### As a student, have you experienced any of the following because you didn’t have enough money for food?
+The following chart shows the BCC student's self-reported impact on academic performance.  They were asked to answer the following:
 
-The following chart shows the BCC student's self-reported impact on academic performance.  
+###### As a student, have you experienced any of the following because you didn’t have enough money for food?
 
 ```{r}
 bcc.likert.school <- likert(bcc.factors[, 11:15])
