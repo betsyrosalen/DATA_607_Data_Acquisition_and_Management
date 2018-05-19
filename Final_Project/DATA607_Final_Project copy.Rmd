@@ -31,7 +31,7 @@ I contacted Dr. Ahmed and she generously agreed to share a portion of her data w
 
 If you would like to reproduce my analysis please contact me so I can get permission to share access to the data provided by Drs. Ahmed and Ilieva.
 
-Additionally, even if I wanted to post it on GitHub, apparently GitHub does not support viewing the raw data for a .sav file, so you cannot   import the data directly from GitHub.  When I clicked on "View Raw" on GitHub it just downloaded the file to my computer anyway, so you will have to download the file to your computer if you want to reproduce my project...
+Additionally, even if I wanted to post it on GitHub, apparently GitHub does not support viewing the raw data for a .sav file, so you cannot   import the data directly from GitHub.  When I clicked on "View Raw" on Github it just downloaded the file to my computer anyway, so you will have to download the file to your computer if you want to reproduce my project...
 
 ```{r}
 # Use the haven package to load the SPSS .sav file
@@ -88,7 +88,7 @@ census_data <- getCensus(name = "timeseries/healthins/sahie",
 
 I tried using [DataFerrett](https://dataferrett.census.gov/) multiple times even before trying some of the previously described methods but couldn't get that to work on my Mac. It only works in Internet Explorer and the ESR version of Mozilla Firefox.  I tried installing the correct version of Firefox on my Mac, but it still wouldn't work.  Finally when all other methods of collecting the data failed, I tried DataFerrett again on my work PC and was finally able to get it working.  
 
-![DataFerrett Screenshot](Images/DataFerrett.PNG)
+[DataFerrett](Images/DataFerrett.PNG)
 
 Once I got DataFerrett working it was fantastic  I was able to download only the variables I needed plus filter out for a specific value so that I would only get completed surveys.  I was also able to download it in different file formats and download a variable list and a codebook.  All of these files are available in my [GitHub Repo](https://github.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/tree/master/Final_Project).
 
@@ -104,18 +104,18 @@ Additional details and documentation about the data can be found here:
 
 ### Available BCC Variables
 
-The BCC dataset includes 116 variables mostly in likert scales.  
+The BCC dataset includes 116 variables mostly in likert scales but also some text responses.  
 
-```{r}
+```{r include=FALSE}
 library(tidyverse)
 names(bcc_data)
 ```
 
 ### Available Census Variables
 
-The Census data includes 155 variables almost exclusively in likert scales with some numeric variables.  See the [CodeBook](https://github.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/blob/master/Final_Project/Data%20Documentation/CodeBook.txt) or [Variable List](https://github.com/betsyrosalen/DATA_607_Data_Acquisition_and_Management/blob/master/Final_Project/Data%20Documentation/Census_Variables.csv) for details about what these variables represent.  
+The Census data includes 155 variables almost exclusively in likert scales with some numeric variables.
 
-```{r}
+```{r include=FALSE}
 names(census_data)
 ```
 
@@ -123,17 +123,15 @@ names(census_data)
 
 Using the questionnaire provided by the researchers for the BCC data and the CodeBook downloaded from DataFerrett, I was able to further narrow down the variables that I wanted to work with for my analysis.  I was looking for similar questions from each survey to try to come up with a method of comparison.  Most of the BCC variables asked about the past 3 months while the Census data asked the same questions twice about the past 30 days and also about the past 12 months.  Otherwise the questions asked were very similar so a comparison can be made even if it is an imperfect one. 
 
-I had in mind to use the likert package to do analyses of the likert scales for similar questions from the two datasets side by side.  I also wanted to see if I could find any correlations with GPA in the BCC data, so I thought I would aggregate some of the food security likert responses into a single "score" and run a linear model on that to see if there is any correlation between the two.   
+I had in mind to use the likert package to do analyses of the likert scales for similar questions from the two datasets side by side.  I also wanted to see if I could find any correlations with GPA in the BCC data, so I thought I would aggregate some of the food security likert responses into a single "score" and run a linear model on that to see if there is any correlation between the two.  Finally, I also wanted to take advantage of the text responses to do a simple word analysis to see if any trends show up in the BCC data text responses.  
 
 ### Likert Scales Comparison of BCC vs. Census Data
 
 #### Challenges
 
-In addition to the challenges with each particular dataset listed below, trying to match up the Census variables with the corresponding variables in the BCC dataset was challenging.  The same questions were asked in both surveys, but for different time-frames.  The BCC survey asked about the last 3 months and the Census survey asked the same questions for both the last 30 days and the last 12 months.  Additionally the allowed responses for the same question sometimes differed between the two data sets.  Even when the allowed responses were basically the same, the factor levels they were coded with were not, so a lot of manipulating and rearranging had to be done to try to make side-by-side comparisons.
-
 ##### BCC Data
 
-I had some trouble figuring out how to convert the imported data from both data sets into factors to use with the `likert` package.  For the BCC data it was actually simple once I figured out that the `haven` `read_spss` function imports the data as class "labelled".  I found the `labelled` package online for working with labelled data that has a `to_factor` function that easily transforms the data into an ordered, labelled factor.  I also had trouble with one miscoded data point that threw off all the factor levels so that needed to be fixed as well.
+I had some trouble figuring out how to convert the imported data from both data sets into factors to use with the `likert` package.  For the BCC data it was actually simple once I figured out that the `haven` `read_spss` function imports the data as class "labelled".  I found the `labelled` package online for working with labelled data that has a `to_factor` function that easily transforms the data into an ordered, labelled factor.  I had trouble with one miscoded data point that threw off all the factor levels so that needed to be fixed as well.
 
 ```{r}
 library(labelled)
@@ -154,6 +152,7 @@ names(bcc.factors) <- c("I worried whether my food would run out before I got mo
 ##### Census Data
 
 For the Census data I had some trouble figuring out what all my data meant because my CodeBook downloaded from DataFerrett did not include -1 as a possible value, but my data had -1's in it.  So I called the DataFerrett support line who then gave me the CPS Data Hotline number, (301) 763-3806.  The CPS hotline was able to confirm that a -1 value indicates "Not in universe" which basically means that the survey respondent did not meet the criteria for even being asked that particular question.  Once I got this figured out I was able to write functions based on the CodeBook to transform my data into factors.
+
 
 ```{r}
 # Change Census Data columns to factors
@@ -196,6 +195,37 @@ names(census.30d.yn2) = c("cut the size of meals because there wasn’t enough m
 
 # Don't need this one
 # census.12m.yn <- census_data[,c(52, 56, 60, 64, 66)]
+```
+
+```{r eval=FALSE, include=FALSE}
+#I tried to filter out the non-response levels of the census factors, but can't seem to get this working...  :-(
+
+# 30 day variables
+wantedLevels <- c(5,6,7)
+
+census.30d.yn <- census.30d.yn %>%
+  filter(as.integer(HESSM2) %in% wantedLevels, 
+         as.integer(HESSM3) %in% wantedLevels, 
+         as.integer(HESSM4) %in% wantedLevels, 
+         as.integer(HESHM2) %in% wantedLevels, 
+         as.integer(HESHM3) %in% wantedLevels, 
+         as.integer(HESHM4) %in% wantedLevels, 
+         as.integer(HESHM5) %in% wantedLevels, 
+         as.integer(HESSHM1) %in% wantedLevels)
+
+# 12 month variables
+
+census.12m.tf <- census.12m.tf %>%
+  filter(as.integer(HESS2) %in% wantedLevels, 
+         as.integer(HESS3) %in% wantedLevels, 
+         as.integer(HESS4) %in% wantedLevels)
+
+census.12m.yn <- census.12m.yn %>%
+  filter(as.integer(HESH2) %in% wantedLevels, 
+         as.integer(HESH3) %in% wantedLevels, 
+         as.integer(HESH4) %in% wantedLevels,
+         as.integer(HESH5) %in% wantedLevels, 
+         as.integer(HESSH1) %in% wantedLevels)
 ```
 
 I made a choice to keep the "Not in Universe" datapoints in my analysis since they represent Census respondents who just weren't asked these questions.  I would need to do a lot more research on how the census questions were asked and why those individuals were not asked those questions to determine whether or not they really should be counted or not.  So with that said, the comparison below may not hold any real value since including those may throw off my percentages significantly.  If they were not asked the questions because they answered a previous question indicting that they had no problems accessing or obtaining food, then it would make sense to keep them.  That is my assumption at this point, but I would need to verify this.
@@ -272,43 +302,33 @@ model <- lm(GPA ~ Score, gpa.score)
 summary(model)
 ```
 
-There does not appear to be any actual correlation between the student's perception of the impact that lack of access and money for food has on their academic performance and their actual reported academic performance as indicated by their self-reported GPA. A p-value of 0.35 far exceeds a 0.05 significance level, so there is no statistically significant correlation.  
-
 ```{r}
-ggplot(data=model, aes(y=GPA, x=Score)) +
-  geom_point(alpha=.25) +
-  geom_abline(slope=model$coefficients[2], 
-				intercept=model$coefficients[1], color='blue', size=1, alpha=.5) +
-  ylab("GPA") +
-  xlab("Score") +
-  ggtitle("GPA as a function of Students' Perceived Impact of Food Insecurity on Academic Performance")
+plot(model)
 ```
 
-Additionally, although the plot above appears to have a negative correlation, the residuals plot below shows that it does not meet the criteria for least squares regression because it does not satisfy the condition of constant variability.
+
+
+### BCC Word Cloud
 
 ```{r}
-ggplot(data=model, aes(y=model$residuals, x=Score)) +
-  geom_point(alpha=.25, color='blue') +
-  geom_abline(slope=0, 
-				intercept=0, color='red', size=1, alpha=.25) +
-  ylab("Residuals") +
-  xlab("Score") +
-  ggtitle("Residual Plot for GPA as a function of Students' Perceived Impact of Food Insecurity on Academic Performance")
+library(tm)
+library(wordcloud)
+# From DataCamp
+clean_corpus <- function(corpus){
+  corpus <- tm_map(corpus, removePunctuation)
+  corpus <- tm_map(corpus, stripWhitespace)
+  corpus <- tm_map(corpus, removeNumbers)
+  corpus <- tm_map(corpus, content_transformer(tolower))
+  corpus <- tm_map(corpus, removeWords, 
+                   c(stopwords("en"), "amp", "chardonnay", "wine", "glass"))
+  return(corpus)
+}
 ```
 
-There are also a couple of outliers that may impact the model.
-
-```{r}
-ggplot(data=model, aes(x=model$residuals)) +
-  geom_histogram(bins = 12, alpha=.5) +
-  ggtitle("Histogram of Residuals")
-qqnorm(model$residuals)
-qqline(model$residuals)
-```
 
 ## Conclusion
 
-Unfortunately, reaching any conclusions from this analysis does not seem reasonable.  Although it appears that BCC students face food insecurity in proportions larger than the general population the difference in time frames between the Census and BCC data collected and the uncertainty about the Census Data collection process make it difficult to be certain about any comparisons between the two.  The project was a great learning experience though. I learned a lot just going through the process of trying to access and understand the Census data and import and manipulate the two datasets in an attempt to make them comparable.  I also think a lot more could be done with the BCC dataset alone given more time.  
+
 
 ## Citations
 

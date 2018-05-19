@@ -1,4 +1,4 @@
-name: Document
+name: Publish Document
 title:
 username:
 account: rpubs
@@ -6,5 +6,5 @@ server: rpubs.com
 hostUrl: rpubs.com
 appId: https://api.rpubs.com/api/v1/document/390448/54f43a4fd3234d8cae3ba789a6bd8d19
 bundleId: https://api.rpubs.com/api/v1/document/390448/54f43a4fd3234d8cae3ba789a6bd8d19
-url: http://rpubs.com/publish/claim/390448/b962456c1bf448ba85200a794ed04b66
-when: 1526706402.15887
+url: http://rpubs.com/betsyrosalen/390448
+when: 1526706576.22492
