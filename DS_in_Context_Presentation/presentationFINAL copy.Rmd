@@ -14,7 +14,10 @@ editor_options:
 knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
 ```
 
-# What this presentation is about
+
+# Data Visualization
+
+## What this presentation is about
 
 - What is data visualization?
 - History of data visualization
@@ -25,7 +28,9 @@ knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
 
 Main Source: [Good Charts: The HBR Guide to Making Smarter, More Persuasive Data Visualizations by Scott Berinato ](https://www.amazon.com/gp/product/1633690709/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1)
 
-# What this presentation is NOT about
+# Data Visualization
+
+## What this presentation is NOT about
 
 - ggplot2
 - coding
